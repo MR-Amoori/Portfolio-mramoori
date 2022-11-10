@@ -39,7 +39,7 @@ namespace Portfolio.DataLayer.Mapping
 
             builder.Property(x => x.Twitter).HasMaxLength(100).IsRequired().HasDefaultValue("mr__amoori");
 
-
+            builder.Property(x=>x.Telegram).HasMaxLength(20).IsRequired().HasDefaultValue("Doitik");
         }
     }
 }

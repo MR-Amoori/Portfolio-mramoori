@@ -1,8 +1,268 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿
+@{
+    ViewData["Title"] = "";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+    <div id="particles-js"></div>
+
+    <div class="content">
+        @*<img class="tilt" src="~/images/home-pic.png" alt="">*@
+        <img class="tilt" src="~/images/Avatar.jpg" alt="">
+        <h3> محمدرضا <span>عموری</span> </h3>
+        <p> i'm a <span class="typing-text text-green"> .net developer </span> </p>
+        <a href="#about" class="btn">درباره من</a>
+    </div>
+
+</section>
+
+<!-- home section ends -->
+<!-- about section starts  -->
+
+<section class="about" id="about">
+
+    <h1 class="heading"> درباره <span>من</span> </h1>
+
+    <div class="row">
+
+        <div class="image">
+            <script src="https://unpkg.com/@("@lottiefiles")/lottie-player@latest/dist/lottie-player.js"></script>
+            <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_kyu7xb1v.json" class="tilt" background="transparent" speed="1" style="width: 300px; height: 300px; margin-left: auto; margin-right: auto;" loop autoplay></lottie-player>
+            @*<img class="tilt"  src="~/images/Developer.gif" alt="">*@
+        </div>
+
+        <div class="content">
+            <h3> من <span> محمدرضا عموری </span> هستم </h3>
+            <p class="info">
+                توسعه دهنده Full Stack وب هستم.
+                <br />
+                علاقه مند به ساختن برنامه‌ های کاربردی تحت وب، ویندوز و ربات بوده و اکثر مطالعاتم در این حوزه می باشد.
+                <br />
+                متولد 1383 ساکن استان خوزستان هستم؛ فعالیتم در حوزه برنامه نویسی و آی تی رو از سال 1397 با برخی از تکنولوژی ها شروع کردم و از سال 1399 بصورت جدی وارد این دنیای بی انتها شدم.
+                <br />
+                سال هاست تمرکز خودم رو روی تکنولوژی های NET. گذاشتم و تقریبا روی تمام تکنولوژی های مایکروسافت تسلط کافی دارم.
+                من به زبان برنامه نویسی سی شارپ مسلطم و معمولا برای وب، تکنولوژی این زبان یعنی Asp.Net Core رو کار می کنم. همچنین برای اپلیکیشن های تحت دسکتاپ و ویندوز هم از تکنولوژی های WinForms و WPF استفاده می کنم.
+                <br />
+                تخصص من در زمینه برنامه نویسی هست اما در زمینه های امنیت، شبکه، پشتیبانی، گرافیک و فتوشاپ هم مهارت دارم.
+                برنامه نویسی برای ربات های اینستاگرام و تلگرام هم جز علایق من بوده که در این زمینه هم مهارتی دارم.
+                <br />
+                در حال حاظر محصل رشته شبکه و نرم افزار هستم.
+            </p>
+            <div class="box-container">
+                <div class="box">
+                    <p> <span> سن: </span> 21 </p>
+                    <p> <span> جنسیت: </span> مرد </p>
+                    <p> <span> تجربه : </span> 4 سال </p>
+                    <p> <span> فریلنسر : </span> آزاد </p>
+                </div>
+                <div class="box">
+                    <p> <span> زبان : </span> ایرانی / انگلیسی </p>
+                    <p> <span> تلفن : </span> +123-456-7890 </p>
+                    <p> <span> ایمیل : </span> mramani9957@gmail.com </p>
+                    <p> <span> آدرس : </span> ایران,خراسان رضوی </p>
+                </div>
+            </div>
+            <a href="#" class="btn">دانلود رزومه</a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- about section ends -->
+<!-- services section starts  -->
+
+<section class="services" id="services">
+
+    <h1 class="heading"> <span> خدمات </span> من </h1>
+
+    <div class="box-container">
+
+        <div class="box tilt">
+            <i class="fas fa-code"></i>
+            <h3>طراح وب</h3>
+            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
+        </div>
+
+        <div class="box tilt">
+            <i class="fas fa-paint-brush"></i>
+            <h3>طراحی گرافیک</h3>
+            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
+        </div>
+
+        <div class="box tilt">
+            <i class="fas fa-bullhorn"></i>
+            <h3> سئو</h3>
+            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
+        </div>
+
+        <div class="box tilt">
+            <i class="fas fa-envelope"></i>
+            <h3>بازاریابی ایمیلی</h3>
+            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
+        </div>
+
+        <div class="box tilt">
+            <i class="fas fa-mobile"></i>
+            <h3>طراحی واکنش گرا</h3>
+            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
+        </div>
+
+        <div class="box tilt">
+            <i class="fab fa-wordpress"></i>
+            <h3>وردپرس</h3>
+            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- services section ends -->
+<!-- portfolio section starts  -->
+
+<section class="portfolio" id="portfolio">
+
+    <h1 class="heading"> <span> نمونه </span> کارها </h1>
+
+    <div class="box-container">
+
+        <div class="box tilt">
+            <img src="~/images/img-1.jpg" alt="">
+            <div class="content">
+                <a href="#" class="btn">بیشتر بدانید</a>
+            </div>
+        </div>
+
+        <div class="box tilt">
+            <img src="~/images/img-2.jpg" alt="">
+            <div class="content">
+                <a href="#" class="btn">بیشتر بدانید</a>
+            </div>
+        </div>
+
+        <div class="box tilt">
+            <img src="~/images/img-3.jpg" alt="">
+            <div class="content">
+                <a href="#" class="btn">بیشتر بدانید</a>
+            </div>
+        </div>
+
+        <div class="box tilt">
+            <img src="~/images/img-4.jpg" alt="">
+            <div class="content">
+                <a href="#" class="btn">بیشتر بدانید</a>
+            </div>
+        </div>
+
+        <div class="box tilt">
+            <img src="~/images/img-5.jpg" alt="">
+            <div class="content">
+                <a href="#" class="btn">بیشتر بدانید</a>
+            </div>
+        </div>
+
+        <div class="box tilt">
+            <img src="~/images/img-6.jpg" alt="">
+            <div class="content">
+                <a href="#" class="btn">بیشتر بدانید</a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- portfolio section ends -->
+<!-- blogs section starts  -->
+
+<section class="blogs" id="blogs">
+
+    <h1 class="heading"> <span> وبلاگ </span> من </h1>
+
+    <div class="box-container">
+
+        <div class="box tilt">
+            <img src="~/images/blog-img-1.jpg" alt="">
+            <h3> عنوان وبلاگ اینجا قرار میگیرد </h3>
+            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </p>
+            <a href="#" class="btn">بیشتر بدانید</a>
+        </div>
+
+        <div class="box tilt">
+            <img src="~/images/blog-img-2.jpg" alt="">
+            <h3> عنوان وبلاگ اینجا قرار میگیرد </h3>
+            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </p>
+            <a href="#" class="btn">بیشتر بدانید</a>
+        </div>
+
+        <div class="box tilt">
+            <img src="~/images/blog-img-3.jpg" alt="">
+            <h3> عنوان وبلاگ اینجا قرار میگیرد </h3>
+            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </p>
+            <a href="#" class="btn">بیشتر بدانید</a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- blogs section ends -->
+<!-- contact section starts  -->
+
+<section class="contact" id="contact">
+
+    <h1 class="heading"> تماس با <span> من </span> </h1>
+
+    <div class="row">
+
+        <div class="image">
+            <img class="tilt" src="~/images/contact-img.svg" alt="">
+        </div>
+
+        <form action="">
+
+            <div class="inputBox">
+                <input type="text" placeholder="اسم">
+                <input type="email" placeholder="ایمیل">
+            </div>
+
+            <input type="text" placeholder="عنوان" class="box">
+
+            <textarea placeholder="متن پیام" name="" id="" cols="30" rows="10"></textarea>
+
+            <input type="submit" class="btn" value="ارسال پیام">
+
+        </form>
+
+    </div>
+
+</section>
+
+<!-- contact section ends -->
+
+
+@section Scripts
+{
+
+    <script>
+        var typed = new Typed('.typing-text',
+            {
+                strings: [
+                    '.NET Developer', '.NET Developer', 'Full Stack Developer', 'Web Designer', 'Software Engineer'
+                ],
+                loop: true,
+                typeSpeed: 150
+            });
+
+        VanillaTilt.init(document.querySelectorAll('.tilt'),
+            {
+                max: 25
+            });
+    </script>
+
+}
