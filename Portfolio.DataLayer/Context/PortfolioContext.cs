@@ -13,15 +13,20 @@ namespace Portfolio.DataLayer.Context
     {
         public PortfolioContext(DbContextOptions<PortfolioContext> options) : base(options)
         {
-
         }
 
-        DbSet<Personal> Personal { get; set; }
+        public DbSet<Personal> Personal { get; set; }
+        public DbSet<Service> Services { get; set; }
+        public DbSet<Models.Portfolio> Portfolios { get; set; }
+        public DbSet<Skill> Skills { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new PersonalMapping());
+            modelBuilder.ApplyConfiguration(new ServiceMapping());
+            modelBuilder.ApplyConfiguration(new SkillMapping());
+
 
             base.OnModelCreating(modelBuilder);
         }
