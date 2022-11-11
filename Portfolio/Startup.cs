@@ -5,6 +5,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Portfolio.DataLayer.Context;
+using Portfolio.DataLayer.Repositories;
+using Portfolio.DataLayer.Sevices;
 
 
 namespace Portfolio
@@ -22,6 +24,8 @@ namespace Portfolio
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
+
+            services.AddScoped<IIndexRepository, IndexRepository>();
 
             string connetcionString = Configuration.GetConnectionString("LocalHost");
 

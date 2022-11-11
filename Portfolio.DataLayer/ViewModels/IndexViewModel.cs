@@ -7,10 +7,10 @@ using Portfolio.DataLayer.Models;
 
 namespace Portfolio.DataLayer.ViewModels
 {
-    class IndexViewModel
+    public class IndexViewModel
     {
         public Personal Personal { get; set; }
-        public Service Service { get; set; }
+        public List<Service> Service { get; set; }
         public List<Models.Portfolio> Portfolios { get; set; }
         public List<Skill> Skills { get; set; }
         public Contact Contact { get; set; }

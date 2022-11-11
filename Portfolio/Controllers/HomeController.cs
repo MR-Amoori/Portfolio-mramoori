@@ -6,14 +6,25 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Portfolio.DataLayer.Repositories;
+using Portfolio.DataLayer.ViewModels;
 
 namespace Portfolio.Controllers
 {
     public class HomeController : Controller
     {
+        IIndexRepository _repository;
+
+        public HomeController(IIndexRepository repository)
+        {
+            _repository = repository;
+        }
+
         public IActionResult Index()
         {
-            return View();
+            IndexViewModel index = new  IndexViewModel();
+            index = _repository.GetIndex();
+            return View(index);
         }
 
 
