@@ -23,7 +23,5 @@ namespace Portfolio.DataLayer.Models
         public string Github { get; set; }
         public string Linkedin { get; set; }
         public string Telegram { get; set; }
-
-        public List<Skill> Skills { get; set; }
     }
 }

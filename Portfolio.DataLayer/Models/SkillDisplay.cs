@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Portfolio.DataLayer.Models
 {
-   public class Skill
+    public class SkillDisplay
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public int Percentage { get; set; }
     }
 }

@@ -9,19 +9,15 @@ using Portfolio.DataLayer.Models;
 
 namespace Portfolio.DataLayer.Mapping
 {
-    class SkillMapping : IEntityTypeConfiguration<Skill>
+    class SkillDiplayMapping : IEntityTypeConfiguration<SkillDisplay>
     {
-        public void Configure(EntityTypeBuilder<Skill> builder)
+        public void Configure(EntityTypeBuilder<SkillDisplay> builder)
         {
-            builder.ToTable("Skills");
+            builder.ToTable("SkillsDisplay");
 
             builder.HasKey(x => x.Id);
 
             builder.Property(x => x.Name).HasMaxLength(50).IsRequired();
-
-            builder.Property(x => x.Percentage).HasMaxLength(100).IsRequired();
-
-            //  builder.HasOne(x => x.Personal).WithMany(x => x.Skills).HasForeignKey(x => x.PersonalId);
         }
     }
 }
