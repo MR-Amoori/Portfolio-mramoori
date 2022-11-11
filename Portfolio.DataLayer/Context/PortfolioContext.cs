@@ -19,13 +19,16 @@ namespace Portfolio.DataLayer.Context
         public DbSet<Service> Services { get; set; }
         public DbSet<Models.Portfolio> Portfolios { get; set; }
         public DbSet<Skill> Skills { get; set; }
+        public DbSet<Blog> Blogs { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new PersonalMapping());
-            modelBuilder.ApplyConfiguration(new ServiceMapping());
-            modelBuilder.ApplyConfiguration(new SkillMapping());
+            var assembly = typeof(PortfolioMapping).Assembly;
+            modelBuilder.ApplyConfigurationsFromAssembly(assembly);
+            //  modelBuilder.ApplyConfiguration(new PersonalMapping());
+            //  modelBuilder.ApplyConfiguration(new ServiceMapping());
+            //  modelBuilder.ApplyConfiguration(new SkillMapping());
 
 
             base.OnModelCreating(modelBuilder);
