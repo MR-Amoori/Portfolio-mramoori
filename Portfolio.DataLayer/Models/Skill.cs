@@ -11,6 +11,7 @@ namespace Portfolio.DataLayer.Models
         public int Id { get; set; }
         public string Name { get; set; }
 
+        public int PersonalId { get; set; }
         public Personal Personal { get; set; }
     }
 }

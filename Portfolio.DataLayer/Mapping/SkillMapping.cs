@@ -18,6 +18,8 @@ namespace Portfolio.DataLayer.Mapping
             builder.HasKey(x => x.Id);
 
             builder.Property(x => x.Name).HasMaxLength(50).IsRequired();
+
+            builder.HasOne(x => x.Personal).WithMany(x => x.Skills).HasForeignKey(x => x.PersonalId);
         }
     }
 }

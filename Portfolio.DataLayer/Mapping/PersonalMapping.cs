@@ -59,7 +59,9 @@ namespace Portfolio.DataLayer.Mapping
 
             builder.Property(x => x.Telegram).HasMaxLength(20).IsRequired().HasDefaultValue("Doitik");
 
-          //  builder.HasMany(x => x.Skills).WithOne(x => x.Personal).HasForeignKey(x => x.Id);
+            builder.HasMany(x => x.Skills).WithOne(x => x.Personal).HasForeignKey(x => x.PersonalId);
+
+            //  builder.HasMany(x => x.Skills).WithOne(x => x.Personal).HasForeignKey(x => x.Id);
         }
     }
 }
