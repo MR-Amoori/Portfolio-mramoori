@@ -26,6 +26,7 @@ namespace Portfolio
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
             services.AddScoped<IIndexRepository, IndexRepository>();
+            services.AddScoped<IContactRepository, ContactRepository>();
 
             string connetcionString = Configuration.GetConnectionString("LocalHost");
 

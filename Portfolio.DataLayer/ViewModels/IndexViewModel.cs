@@ -15,6 +15,5 @@ namespace Portfolio.DataLayer.ViewModels
         public List<Skill> Skills { get; set; }
         public Contact Contact { get; set; }
         public List<Blog> Blogs { get; set; }
-        public List<SkillDisplay> SkillsDisplay { get; set; }
     }
 }

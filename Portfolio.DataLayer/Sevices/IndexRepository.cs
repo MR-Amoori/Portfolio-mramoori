@@ -9,14 +9,14 @@ using Portfolio.DataLayer.ViewModels;
 
 namespace Portfolio.DataLayer.Sevices
 {
-   public class IndexRepository:IIndexRepository
+    public class IndexRepository : IIndexRepository
     {
-       private readonly PortfolioContext _context;
+        private readonly PortfolioContext _context;
 
-       public IndexRepository(PortfolioContext context)
-       {
-           _context = context;
-       }
+        public IndexRepository(PortfolioContext context)
+        {
+            _context = context;
+        }
 
         public IndexViewModel GetIndex()
         {
@@ -24,7 +24,7 @@ namespace Portfolio.DataLayer.Sevices
 
             index.Personal = _context.Personal.FirstOrDefault();
 
-            index.Blogs = _context.Blogs.ToList();
+            index.Blogs = _context.Blogs.Where(x => !x.IsDeleted).ToList();
 
             index.Portfolios = _context.Portfolios.ToList();
 
@@ -32,10 +32,13 @@ namespace Portfolio.DataLayer.Sevices
 
             index.Skills = _context.Skills.ToList();
 
-            index.SkillsDisplay = _context.SkillsDisplay.ToList();
 
             return index;
+        }
 
+        public void Save()
+        {
+            _context.SaveChanges();
         }
     }
 }

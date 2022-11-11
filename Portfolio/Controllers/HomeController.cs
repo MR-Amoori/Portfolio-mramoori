@@ -17,13 +17,15 @@ namespace Portfolio.Controllers
     public class HomeController : Controller
     {
         IIndexRepository _repository;
+        IContactRepository _contactRepository;
 
         private PortfolioContext _context;
 
-        public HomeController(IIndexRepository repository, PortfolioContext context)
+        public HomeController(IIndexRepository repository, PortfolioContext context, IContactRepository contactRepository)
         {
             _repository = repository;
             _context = context;
+            _contactRepository = contactRepository;
         }
 
         public IActionResult Index()
@@ -35,6 +37,13 @@ namespace Portfolio.Controllers
 
         public IActionResult MessageToMe(Contact contact)
         {
+            if (!ModelState.IsValid || contact == null)
+            {
+                return RedirectToAction("Index", contact);
+            }
+
+            _contactRepository.AddMessage(contact);
+            _contactRepository.Save();
 
             return RedirectToAction("Index");
         }

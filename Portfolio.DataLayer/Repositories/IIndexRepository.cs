@@ -5,5 +5,6 @@ namespace Portfolio.DataLayer.Repositories
     public interface IIndexRepository
     {
         IndexViewModel GetIndex();
+        void Save();
     }
 }
