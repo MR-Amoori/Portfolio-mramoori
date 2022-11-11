@@ -8,6 +8,7 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using Portfolio.DataLayer.Context;
+using Portfolio.DataLayer.Models;
 using Portfolio.DataLayer.Repositories;
 using Portfolio.DataLayer.ViewModels;
 
@@ -30,6 +31,12 @@ namespace Portfolio.Controllers
             IndexViewModel index = new  IndexViewModel();
             index = _repository.GetIndex();
             return View(index);
+        }
+
+        public IActionResult MessageToMe(Contact contact)
+        {
+
+            return RedirectToAction("Index");
         }
 
 

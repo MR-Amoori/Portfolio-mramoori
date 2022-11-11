@@ -121,41 +121,11 @@
         @foreach (var item in Model.Service)
         {
             <div class="box tilt">
-                <i class="fas @item.ClassIcon"></i>
+                <i class="@item.ClassIcon"></i>
                 <h3>@item.Name</h3>
                 <p>@item.Decription </p>
             </div>
         }
-
-        @*<div class="box tilt">
-                <i class="fas fa-paint-brush"></i>
-                <h3>طراحی گرافیک</h3>
-                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
-            </div>
-
-            <div class="box tilt">
-                <i class="fas fa-bullhorn"></i>
-                <h3> سئو</h3>
-                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
-            </div>
-
-            <div class="box tilt">
-                <i class="fas fa-envelope"></i>
-                <h3>بازاریابی ایمیلی</h3>
-                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
-            </div>
-
-            <div class="box tilt">
-                <i class="fas fa-mobile"></i>
-                <h3>طراحی واکنش گرا</h3>
-                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
-            </div>
-
-            <div class="box tilt">
-                <i class="fab fa-wordpress"></i>
-                <h3>وردپرس</h3>
-                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
-            </div>*@
 
     </div>
 
@@ -170,47 +140,15 @@
 
     <div class="box-container">
 
-        <div class="box tilt">
-            <img src="~/images/img-1.jpg" alt="">
-            <div class="content">
-                <a href="#" class="btn">بیشتر بدانید</a>
+        @foreach (var item in Model.Portfolios)
+        {
+            <div class="box tilt">
+                <img src="~/images/portfolio/@(item.Id).jpg" alt="@item.Title">
+                <div class="content">
+                    <a href="@item.Link" class="btn">دیدن پروژه</a>
+                </div>
             </div>
-        </div>
-
-        <div class="box tilt">
-            <img src="~/images/img-2.jpg" alt="">
-            <div class="content">
-                <a href="#" class="btn">بیشتر بدانید</a>
-            </div>
-        </div>
-
-        <div class="box tilt">
-            <img src="~/images/img-3.jpg" alt="">
-            <div class="content">
-                <a href="#" class="btn">بیشتر بدانید</a>
-            </div>
-        </div>
-
-        <div class="box tilt">
-            <img src="~/images/img-4.jpg" alt="">
-            <div class="content">
-                <a href="#" class="btn">بیشتر بدانید</a>
-            </div>
-        </div>
-
-        <div class="box tilt">
-            <img src="~/images/img-5.jpg" alt="">
-            <div class="content">
-                <a href="#" class="btn">بیشتر بدانید</a>
-            </div>
-        </div>
-
-        <div class="box tilt">
-            <img src="~/images/img-6.jpg" alt="">
-            <div class="content">
-                <a href="#" class="btn">بیشتر بدانید</a>
-            </div>
-        </div>
+        }
 
     </div>
 
@@ -225,26 +163,16 @@
 
     <div class="box-container">
 
-        <div class="box tilt">
-            <img src="~/images/blog-img-1.jpg" alt="">
-            <h3> عنوان وبلاگ اینجا قرار میگیرد </h3>
-            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </p>
-            <a href="#" class="btn">بیشتر بدانید</a>
-        </div>
-
-        <div class="box tilt">
-            <img src="~/images/blog-img-2.jpg" alt="">
-            <h3> عنوان وبلاگ اینجا قرار میگیرد </h3>
-            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </p>
-            <a href="#" class="btn">بیشتر بدانید</a>
-        </div>
-
-        <div class="box tilt">
-            <img src="~/images/blog-img-3.jpg" alt="">
-            <h3> عنوان وبلاگ اینجا قرار میگیرد </h3>
-            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </p>
-            <a href="#" class="btn">بیشتر بدانید</a>
-        </div>
+       @foreach (var item in Model.Blogs)
+       {
+           <div class="box tilt">
+               <img src="@item.ImagePath" alt="@item.Title">
+               <h3> @item.Title </h3>
+               <p> @item.Description </p>
+               <p style="direction: ltr">@item.CreateDate.ToString("yyyy/MM/dd")</p>
+               <a href="@item.Link" class="btn">خواندن</a>
+           </div>
+       }
 
     </div>
 
@@ -263,16 +191,20 @@
             <img class="tilt" src="~/images/contact-img.svg" alt="">
         </div>
 
-        <form action="">
+        <form asp-action="MessageToMe" asp-controller="Home" method="post">
 
             <div class="inputBox">
-                <input type="text" placeholder="اسم">
-                <input type="email" placeholder="ایمیل">
+                <input asp-for="Contact.Name" type="text" placeholder="نام">
+                <span asp-validation-for="Contact.Name"></span>
+                <input asp-for="Contact.Email" type="email" placeholder="ایمیل">
+                <span asp-validation-for="Contact.Email"></span>
             </div>
 
-            <input type="text" placeholder="عنوان" class="box">
+            <input asp-for="Contact.Title" type="text" placeholder="عنوان" class="box">
+            <span asp-validation-for="Contact.Title"></span>
 
-            <textarea placeholder="متن پیام" name="" id="" cols="30" rows="10"></textarea>
+            <textarea asp-for="Contact.Message" placeholder="متن پیام" id="" cols="30" rows="10"></textarea>
+            <span asp-validation-for="Contact.Message"></span>
 
             <input type="submit" class="btn" value="ارسال پیام">
 
