@@ -1,9 +1,14 @@
-﻿@using Portfolio.DataLayer.Models
+﻿@using System.Net
+@using Portfolio.DataLayer.Models
 @model global::Portfolio.DataLayer.ViewModels.IndexViewModel
 @{
     ViewData["Title"] = "";
 }
 
+@section Styles
+{
+    <link href="~/css/cssprogress.css" rel="stylesheet" />
+}
 
 <!-- home section starts  -->
 
@@ -14,7 +19,7 @@
     <div class="content">
         @*<img class="tilt" src="~/images/home-pic.png" alt="">*@
         <img class="tilt" src="~/images/Avatar.jpg" alt="">
-        <h3> محمدرضا <span>عموری</span> </h3>
+        <h3> @Model.Personal.FirstName <span>@Model.Personal.LastName</span> </h3>
         <p> i'm a <span class="typing-text text-green"> .net developer </span> </p>
         <a href="#about" class="btn">درباره من</a>
     </div>
@@ -35,34 +40,42 @@
         </div>
 
         <div class="content">
-            <h3> من <span> محمدرضا عموری </span> هستم </h3>
+            <h3> من <span> @(Model.Personal.FirstName + " " + Model.Personal.LastName) </span> هستم </h3>
             <p class="info">
                 توسعه دهنده Full Stack وب هستم.
-                <br/>
+                <br />
                 علاقه مند به ساختن برنامه‌ های کاربردی تحت وب، ویندوز و ربات بوده و اکثر مطالعاتم در این حوزه می باشد.
-                <br/>
-                متولد 1383 ساکن استان خوزستان هستم؛ فعالیتم در حوزه برنامه نویسی و آی تی رو از سال 1397 با برخی از تکنولوژی ها شروع کردم و از سال 1399 بصورت جدی وارد این دنیای بی انتها شدم.
-                <br/>
+                <br />
+                متولد 1383 و ساکن استان خوزستان هستم ؛ فعالیتم در حوزه برنامه نویسی و آی تی رو از سال 1397 با برخی از تکنولوژی ها شروع کردم و از سال 1399 بصورت جدی وارد این دنیای بی انتها شدم.
+                <br />
                 سال هاست تمرکز خودم رو روی تکنولوژی های NET. گذاشتم و تقریبا روی تمام تکنولوژی های مایکروسافت تسلط کافی دارم.
+                <br />
                 من به زبان برنامه نویسی سی شارپ مسلطم و معمولا برای وب، تکنولوژی این زبان یعنی Asp.Net Core رو کار می کنم. همچنین برای اپلیکیشن های تحت دسکتاپ و ویندوز هم از تکنولوژی های WinForms و WPF استفاده می کنم.
-                <br/>
-                تخصص من در زمینه برنامه نویسی هست اما در زمینه های امنیت، شبکه، پشتیبانی، گرافیک و فتوشاپ هم مهارت دارم.
-                برنامه نویسی برای ربات های اینستاگرام و تلگرام هم جز علایق من بوده که در این زمینه هم مهارتی دارم.
-                <br/>
+                <br />
+                تخصص من در زمینه برنامه نویسی هست اما در شاخه های امنیت، شبکه، پشتیبانی، گرافیک و فتوشاپ هم مهارت دارم.
+                برنامه نویسی برای ربات های اینستاگرام و تلگرام هم جز علایق من بوده که در این زمینه هم فعالیت می کنم.
+                <br />
                 در حال حاظر محصل رشته شبکه و نرم افزار هستم.
+
             </p>
+
+
             <div class="box-container">
                 <div class="box">
-                    <p> <span> سن: </span> 21 </p>
-                    <p> <span> جنسیت: </span> مرد </p>
-                    <p> <span> تجربه : </span> 4 سال </p>
-                    <p> <span> فریلنسر : </span> آزاد </p>
+                    <p>
+                        <span> سن: </span> @Model.Personal.Age
+                    </p>
+                    <p>
+                        <span> آدرس : </span> @Model.Personal.Address
+                    </p>
                 </div>
                 <div class="box">
-                    <p> <span> زبان : </span> ایرانی / انگلیسی </p>
-                    <p> <span> تلفن : </span> +123-456-7890 </p>
-                    <p> <span> ایمیل : </span> mramani9957@gmail.com </p>
-                    <p> <span> آدرس : </span> ایران,خراسان رضوی </p>
+                    <p>
+                        <span> تلفن : </span> @Model.Personal.Mobile
+                    </p>
+                    <p>
+                        <span> ایمیل : </span> @Model.Personal.Email
+                    </p>
                 </div>
             </div>
             <a href="#" class="btn">دانلود رزومه</a>
@@ -77,45 +90,72 @@
 
 <section class="services" id="services">
 
+    <h1 class="heading">
+        <span>مهارت</span>
+        من
+    </h1>
+
+    <div class="box-container">
+        
+        @foreach (var item in Model.Skills)
+        {
+            <div class="cssProgress">
+                <p style="font-size: 20px">@item.Name</p>
+                <div class="progress3">
+                    <div class="cssProgress-bar cssProgress-success cssProgress-active-right cssProgress-right" data-percent="@item.Percentage" style="width: @(item.Percentage + "%")">
+                        <span class="cssProgress-label">@(item.Percentage)%</span>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+
+
+
+
     <h1 class="heading"> <span> خدمات </span> من </h1>
 
     <div class="box-container">
 
-        <div class="box tilt">
-            <i class="fas fa-code"></i>
-            <h3>طراح وب</h3>
-            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
-        </div>
+        @foreach (var item in Model.Service)
+        {
+            <div class="box tilt">
+                <i class="fas @item.ClassIcon"></i>
+                <h3>@item.Name</h3>
+                <p>@item.Decription </p>
+            </div>
+        }
 
-        <div class="box tilt">
-            <i class="fas fa-paint-brush"></i>
-            <h3>طراحی گرافیک</h3>
-            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
-        </div>
+        @*<div class="box tilt">
+                <i class="fas fa-paint-brush"></i>
+                <h3>طراحی گرافیک</h3>
+                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
+            </div>
 
-        <div class="box tilt">
-            <i class="fas fa-bullhorn"></i>
-            <h3> سئو</h3>
-            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
-        </div>
+            <div class="box tilt">
+                <i class="fas fa-bullhorn"></i>
+                <h3> سئو</h3>
+                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
+            </div>
 
-        <div class="box tilt">
-            <i class="fas fa-envelope"></i>
-            <h3>بازاریابی ایمیلی</h3>
-            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
-        </div>
+            <div class="box tilt">
+                <i class="fas fa-envelope"></i>
+                <h3>بازاریابی ایمیلی</h3>
+                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
+            </div>
 
-        <div class="box tilt">
-            <i class="fas fa-mobile"></i>
-            <h3>طراحی واکنش گرا</h3>
-            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
-        </div>
+            <div class="box tilt">
+                <i class="fas fa-mobile"></i>
+                <h3>طراحی واکنش گرا</h3>
+                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
+            </div>
 
-        <div class="box tilt">
-            <i class="fab fa-wordpress"></i>
-            <h3>وردپرس</h3>
-            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
-        </div>
+            <div class="box tilt">
+                <i class="fab fa-wordpress"></i>
+                <h3>وردپرس</h3>
+                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
+            </div>*@
 
     </div>
 
