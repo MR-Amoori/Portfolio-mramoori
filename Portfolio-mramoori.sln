@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32929.386
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio", "Portfolio\Portfolio.csproj", "{E1BF24B8-AF3D-4579-A9EB-48EE32FCA0AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Portfolio", "Portfolio\Portfolio.csproj", "{E1BF24B8-AF3D-4579-A9EB-48EE32FCA0AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio.DataLayer", "Portfolio.DataLayer\Portfolio.DataLayer.csproj", "{A3999695-D7B6-4140-B392-8641E8B5C2E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Portfolio.DataLayer", "Portfolio.DataLayer\Portfolio.DataLayer.csproj", "{A3999695-D7B6-4140-B392-8641E8B5C2E3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

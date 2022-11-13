@@ -20,7 +20,6 @@ namespace Portfolio.Controllers
         IContactRepository _contactRepository;
 
         private PortfolioContext _context;
-
         public HomeController(IIndexRepository repository, PortfolioContext context, IContactRepository contactRepository)
         {
             _repository = repository;
