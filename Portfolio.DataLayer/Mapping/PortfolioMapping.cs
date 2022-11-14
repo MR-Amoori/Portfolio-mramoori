@@ -18,7 +18,7 @@ namespace Portfolio.DataLayer.Mapping
 
             builder.Property(x => x.Title).HasMaxLength(50).IsRequired();
 
-            builder.Property(x => x.Link).HasMaxLength(100).IsRequired();
+            builder.Property(x => x.Link).HasMaxLength(500).IsRequired();
 
             builder.Property(x => x.ImagePath).HasMaxLength(100).IsRequired();
         }
