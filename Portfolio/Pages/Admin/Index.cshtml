@@ -7,46 +7,46 @@
     اطلاعات کاربر
 </div>
 
-<br/>
+<br />
 
 <div class="align-content-center text-center">
     <table class="table table-hover table-bordered">
         <thead>
-        <tr>
-            <th>نام و نام خانوادگی</th>
-            <th>سن</th>
-            <th>شماره</th>
-            <th>ایمیل</th>
-            <th>عملیات</th>
-        </tr>
+            <tr>
+                <th>نام و نام خانوادگی</th>
+                <th>سن</th>
+                <th>شماره</th>
+                <th>ایمیل</th>
+                <th>عملیات</th>
+            </tr>
         </thead>
         <tbody>
-        <tr>
-            <td>@(Model.viewIndex.Personal.FirstName + " " + Model.viewIndex.Personal.LastName)</td>
-            <td>@Model.viewIndex.Personal.Age</td>
-            <td>@Model.viewIndex.Personal.Mobile</td>
-            <td>@Model.viewIndex.Personal.Email</td>
-            <td>
-                <a asp-page="Personal/EditPersonal" asp-route-id="@Model.viewIndex.Personal.Id" class="btn btn-warning">
-                    ویرایش
-                </a>
-            </td>
-        </tr>
+            <tr>
+                <td>@(Model.viewIndex.Personal.FirstName + " " + Model.viewIndex.Personal.LastName)</td>
+                <td>@Model.viewIndex.Personal.Age</td>
+                <td>@Model.viewIndex.Personal.Mobile</td>
+                <td>@Model.viewIndex.Personal.Email</td>
+                <td>
+                    <a asp-page="Personal/EditPersonal" asp-route-id="@Model.viewIndex.Personal.Id" class="btn btn-warning">
+                        ویرایش
+                    </a>
+                </td>
+            </tr>
         </tbody>
     </table>
 </div>
 
-<br/>
+<br />
 
-<hr/>
+<hr />
 
-<br/>
+<br />
 
 <div class="display-5 fw-bold text-center">
     مهارت ها
 </div>
 
-<br/>
+<br />
 
 <div class="align-content-center text-center">
     <table class="table table-hover table-bordered">
@@ -76,22 +76,22 @@
         }
         </tbody>
     </table>
-    <br/>
+    <br />
     <a href="/Admin/Skill/AddSkill" class="btn btn-success">افزودن</a>
 </div>
 
 
-<br/>
+<br />
 
-<hr/>
+<hr />
 
-<br/>
+<br />
 
 <div class="display-5 fw-bold text-center">
     خدمات
 </div>
 
-<br/>
+<br />
 
 <div class="align-content-center text-center">
     <table class="table table-hover table-bordered">
@@ -119,48 +119,6 @@
         }
         </tbody>
     </table>
-    <br/>
-    <a href="/Admin/Service/AddService" class="btn btn-success">افزودن</a>
-</div>
-
-<br/>
-
-<hr/>
-
-<br/>
-
-<div class="display-5 fw-bold text-center">
-    نمونه کار ها
-</div>
-
-<br/>
-
-<div class="align-content-center text-center">
-    <table class="table table-hover table-bordered">
-        <thead>
-        <tr>
-            <th>نام سرویس</th>
-            <th>عملیات</th>
-        </tr>
-        </thead>
-        <tbody>
-        @foreach (var portfolio in Model.viewIndex.Portfolios)
-        {
-            <tr>
-                <td>@portfolio.Title</td>
-                <td>
-                    <a asp-page="/Admin/Service/EditService" asp-route-id="@portfolio.Id" class="btn btn-warning">
-                        ویرایش
-                    </a>
-                    |
-                    <a asp-page="/Admin/Service/DeleteService" asp-route-id="@portfolio.Id" class="btn btn-danger">
-                        حذف
-                    </a>
-                </td>
-            </tr>
-        }
-        </tbody>
-    </table>
-    <br/>
+    <br />
     <a href="/Admin/Service/AddService" class="btn btn-success">افزودن</a>
 </div>
