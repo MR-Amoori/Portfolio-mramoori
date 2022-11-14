@@ -194,7 +194,7 @@
         @foreach (var item in Model.Portfolios)
         {
             <div class="box tilt">
-                <img src="~/images/portfolio/@(item.Id).jpg" alt="@item.Title">
+                <img src="@item.ImagePath" alt="@item.Title">
                 <div class="content">
                     <a href="@item.Link" class="btn">دیدن پروژه</a>
                 </div>

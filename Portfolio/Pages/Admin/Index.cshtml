@@ -139,8 +139,7 @@
     <table class="table table-hover table-bordered">
         <thead>
         <tr>
-            <th>نام سرویس</th>
-            <th>عملیات</th>
+            <th>نام نمونه کار</th>
         </tr>
         </thead>
         <tbody>
@@ -149,11 +148,11 @@
             <tr>
                 <td>@portfolio.Title</td>
                 <td>
-                    <a asp-page="/Admin/Service/EditService" asp-route-id="@portfolio.Id" class="btn btn-warning">
+                    <a asp-page="/Admin/PortfolioAd/EditPortfolio" asp-route-id="@portfolio.Id" class="btn btn-warning">
                         ویرایش
                     </a>
                     |
-                    <a asp-page="/Admin/Service/DeleteService" asp-route-id="@portfolio.Id" class="btn btn-danger">
+                    <a asp-page="/Admin/PortfolioAD/DeletePortfolio" asp-route-id="@portfolio.Id" class="btn btn-danger">
                         حذف
                     </a>
                 </td>
@@ -162,5 +161,5 @@
         </tbody>
     </table>
     <br/>
-    <a href="/Admin/Service/AddService" class="btn btn-success">افزودن</a>
+    <a href="/Admin/PortfolioAd/AddPortfolio" class="btn btn-success">افزودن</a>
 </div>

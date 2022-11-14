@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Portfolio.DataLayer.Context;
 using Portfolio.DataLayer.Repositories;
 using Portfolio.DataLayer.ViewModels;
+using Portfolio = Portfolio.DataLayer.Models.Portfolio;
 
 namespace Portfolio.DataLayer.Sevices
 {

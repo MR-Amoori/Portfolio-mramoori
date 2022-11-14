@@ -1,0 +1,46 @@
+﻿@page
+@model Portfolio.Pages.Admin.PortfolioAd.AddPortfolioModel
+
+@{
+    ViewData["Title"] = "AddPortfolio";
+}
+
+<h1>افزودن نمونه کار</h1>
+<hr />
+<br />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Portfolio.Title" class="control-label">عنوان</label>
+                <input asp-for="Portfolio.Title" class="form-control" />
+                <span asp-validation-for="Portfolio.Title" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="Portfolio.ImagePath" class="control-label">آدرس عکس</label>
+                <input asp-for="Portfolio.ImagePath" class="form-control" />
+                <span asp-validation-for="Portfolio.ImagePath" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="Portfolio.Link" class="control-label">لینک</label>
+                <input asp-for="Portfolio.Link" class="form-control" />
+                <span asp-validation-for="Portfolio.Link" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="افزودن" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+<div>
+    <a asp-page="/Admin/Index" class="btn btn-secondary">بازگشت</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

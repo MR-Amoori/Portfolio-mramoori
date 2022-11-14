@@ -24,8 +24,4 @@
     <ProjectReference Include="..\Portfolio.DataLayer\Portfolio.DataLayer.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Pages\Admin\Portfolio\" />
-  </ItemGroup>
-
 </Project>

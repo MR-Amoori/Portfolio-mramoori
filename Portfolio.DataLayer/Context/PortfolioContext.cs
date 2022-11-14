@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Portfolio.DataLayer.Mapping;
 using Portfolio.DataLayer.Models;
+using Portfolio.DataLayer.ViewModels;
 
 namespace Portfolio.DataLayer.Context
 {
