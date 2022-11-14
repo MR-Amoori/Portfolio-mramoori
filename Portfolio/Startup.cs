@@ -30,6 +30,7 @@ namespace Portfolio
             services.AddScoped<IIndexRepository, IndexRepository>();
             services.AddScoped<IContactRepository, ContactRepository>();
             services.AddScoped<IPersonalRepository, PersonalRepository>();
+            services.AddScoped<ISkillRepository, SkillRepository>();
 
 
             string connetcionString = Configuration.GetConnectionString("LocalHost");

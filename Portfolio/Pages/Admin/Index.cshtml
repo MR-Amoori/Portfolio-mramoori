@@ -63,11 +63,11 @@
                     <td>@skill.Name</td>
                     <td>@skill.Percentage</td>
                     <td>
-                        <a asp-page="Skill/EditSkill" asp-route-id="@skill.Id" class="btn btn-warning">
+                        <a asp-page="/Admin/Skill/EditSkill" asp-route-id="@skill.Id" class="btn btn-warning">
                             ویرایش
                         </a>
                         |
-                        <a asp-page="Skill/DeleteSkill" asp-route-id="@skill.Id" class="btn btn-danger">
+                        <a asp-page="/Admin/Skill/DeleteSkill" asp-route-id="@skill.Id" class="btn btn-danger">
                             حذف
                         </a>
                     </td>
@@ -76,5 +76,5 @@
         </tbody>
     </table>
     <br />
-    <a href="Skill/AddSkill" class="btn btn-success">افزودن</a>
+    <a href="/Admin/Skill/AddSkill" class="btn btn-success">افزودن</a>
 </div>

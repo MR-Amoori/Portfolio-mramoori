@@ -1,23 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Portfolio.DataLayer.Context;
-using Portfolio.DataLayer.Models;
+using Portfolio.DataLayer.Repositories;
 
 namespace Portfolio.Pages.Admin.Skill
 {
     public class AddSkillModel : PageModel
     {
-        private readonly Portfolio.DataLayer.Context.PortfolioContext _context;
+        private ISkillRepository _repository;
 
-        public AddSkillModel(Portfolio.DataLayer.Context.PortfolioContext context)
+        public AddSkillModel(ISkillRepository repository)
         {
-            _context = context;
+            _repository = repository;
         }
+
 
         public IActionResult OnGet()
         {
@@ -27,7 +23,6 @@ namespace Portfolio.Pages.Admin.Skill
         [BindProperty]
         public DataLayer.Models.Skill Skill { get; set; }
 
-        // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
@@ -35,10 +30,9 @@ namespace Portfolio.Pages.Admin.Skill
                 return Page();
             }
 
-            _context.Skills.Add(Skill);
-            await _context.SaveChangesAsync();
+            _repository.AddSkill(Skill);
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("/Admin/Index");
         }
     }
 }
