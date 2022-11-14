@@ -3,6 +3,78 @@
 @{
 }
 
-<div class="text-center">
-    hello
+<div class="display-5 fw-bold text-center">
+    اطلاعات کاربر
+</div>
+
+<br />
+
+<div class="align-content-center text-center">
+    <table class="table table-hover table-bordered">
+        <thead>
+            <tr>
+                <th>نام و نام خانوادگی</th>
+                <th>سن</th>
+                <th>شماره</th>
+                <th>ایمیل</th>
+                <th>عملیات</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@(Model.viewIndex.Personal.FirstName + " " + Model.viewIndex.Personal.LastName)</td>
+                <td>@Model.viewIndex.Personal.Age</td>
+                <td>@Model.viewIndex.Personal.Mobile</td>
+                <td>@Model.viewIndex.Personal.Email</td>
+                <td>
+                    <a asp-page="Personal/EditPersonal" asp-route-id="@Model.viewIndex.Personal.Id" class="btn btn-warning">
+                        ویرایش
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<hr />
+<hr />
+
+<br />
+
+<div class="display-5 fw-bold text-center">
+    مهارت ها
+</div>
+
+<br />
+
+<div class="align-content-center text-center">
+    <table class="table table-hover table-bordered">
+        <thead>
+            <tr>
+                <th>نام مهارت</th>
+                <th>درصد</th>
+                <th>عملیات</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var skill in Model.viewIndex.Skills)
+            {
+                <tr>
+                    <td>@skill.Name</td>
+                    <td>@skill.Percentage</td>
+                    <td>
+                        <a asp-page="Skill/EditSkill" asp-route-id="@skill.Id" class="btn btn-warning">
+                            ویرایش
+                        </a>
+                        |
+                        <a asp-page="Skill/DeleteSkill" asp-route-id="@skill.Id" class="btn btn-danger">
+                            حذف
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <br />
+    <a href="Skill/AddSkill" class="btn btn-success">افزودن</a>
 </div>

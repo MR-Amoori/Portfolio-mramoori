@@ -8,6 +8,11 @@
 @section Styles
 {
     <link href="~/css/cssprogress.css" rel="stylesheet" />
+    <style>
+        #email-link {
+            color: black;
+        }
+    </style>
 }
 
 <!-- home section starts  -->
@@ -17,9 +22,10 @@
     <div id="particles-js"></div>
 
     <div class="content">
-        @*<img class="tilt" src="~/images/home-pic.png" alt="">*@
         <img class="tilt" src="~/images/Avatar.jpg" alt="">
-        <h3> @Model.Personal.FirstName <span>@Model.Personal.LastName</span> </h3>
+        <h3>
+            @Model.Personal.FirstName <span>@Model.Personal.LastName</span>
+        </h3>
         <p> i'm a <span class="typing-text text-green"> .net developer </span> </p>
         <a href="#about" class="btn">درباره من</a>
     </div>
@@ -74,15 +80,62 @@
                         <span> تلفن : </span> @Model.Personal.Mobile
                     </p>
                     <p>
-                        <span> ایمیل : </span> @Model.Personal.Email
+                        <span> ایمیل : </span> <a id="email-link" href="mailto:@Model.Personal.Email">mrmoori.dev</a>
                     </p>
                 </div>
             </div>
-            <a href="#" class="btn">دانلود رزومه</a>
+
+
+            <a href="~/MyResume/MrAmoori-Portfolio.pdf" class="btn">دانلود رزومه</a>
         </div>
 
     </div>
 
+</section>
+
+<section style="min-height: 0;" class="services" id="services">
+
+    <h1 class="heading">
+        <span>راه ارتباطی</span>
+        من
+    </h1>
+
+
+    <div class="box-container">
+        <div class="box">
+
+
+            <a href="https://www.instagram.com/@Model.Personal.Instagram">
+                <img src="~/Icons/instagram.gif" width="60px" />
+            </a>
+
+            <span>&emsp;&emsp;</span>
+
+
+            <a href="https://twitter.com/@Model.Personal.Twitter">
+                <img src="~/Icons/twitter.gif" width="60px" />
+            </a>
+
+            <span>&emsp;&emsp;</span>
+            
+            <a href="https://github.com/@Model.Personal.Github">
+                <img src="~/Icons/github.gif" width="60px" />
+            </a>
+
+            <span>&emsp;&emsp;</span>
+            
+            <a href="https://www.linkedin.com/in/@Model.Personal.Linkedin">
+                <img src="~/Icons/linkedin.gif" width="60px" />
+            </a>
+
+            <span>&emsp;&emsp;</span>
+
+            <a href="https://t.me/@Model.Personal.Telegram">
+                <img src="~/Icons/telegram.gif" width="60px" />
+            </a>
+
+        </div>
+    </div>
 </section>
 
 <!-- about section ends -->
@@ -96,7 +149,7 @@
     </h1>
 
     <div class="box-container">
-        
+
         @foreach (var item in Model.Skills)
         {
             <div class="cssProgress">
@@ -110,8 +163,6 @@
         }
 
     </div>
-
-
 
 
     <h1 class="heading"> <span> خدمات </span> من </h1>
@@ -163,16 +214,16 @@
 
     <div class="box-container">
 
-       @foreach (var item in Model.Blogs)
-       {
-           <div class="box tilt">
-               <img src="@item.ImagePath" alt="@item.Title">
-               <h3> @item.Title </h3>
-               <p> @item.Description </p>
-               <p style="direction: ltr">@item.CreateDate.ToString("yyyy/MM/dd")</p>
-               <a href="@item.Link" class="btn">خواندن</a>
-           </div>
-       }
+        @foreach (var item in Model.Blogs)
+        {
+            <div class="box tilt">
+                <img src="@item.ImagePath" alt="@item.Title">
+                <h3> @item.Title </h3>
+                <p> @item.Description </p>
+                <p style="direction: ltr">@item.CreateDate.ToString("yyyy/MM/dd")</p>
+                <a href="@item.Link" class="btn">خواندن</a>
+            </div>
+        }
 
     </div>
 

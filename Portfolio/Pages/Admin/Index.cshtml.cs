@@ -5,14 +5,26 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Portfolio.DataLayer.Context;
+using Portfolio.DataLayer.Repositories;
+using Portfolio.DataLayer.ViewModels;
 
 namespace Portfolio.Pages.Admin
 {
-    [Authorize]
+   // [Authorize]
     public class IndexModel : PageModel
     {
+        private readonly IIndexRepository _repository;
+        public IndexViewModel viewIndex { get; set; }
+
+        public IndexModel(IIndexRepository repository)
+        {
+            _repository = repository;
+        }
+
         public void OnGet()
         {
+            viewIndex = _repository.GetIndex();
         }
 
         public void OnGetAdminDashboard()

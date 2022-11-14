@@ -1,0 +1,102 @@
+﻿@page "{id:int}"
+@model Portfolio.Pages.Admin.Personal.EditPersonalModel
+
+@{
+    ViewData["Title"] = "EditPersonal";
+}
+
+<h1>ویرایش کاربر</h1>
+
+<hr/>
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Personal.Id"/>
+
+            <div class="form-group">
+                <label asp-for="Personal.FirstName" class="control-label">نام</label>
+                <input asp-for="Personal.FirstName" class="form-control"/>
+                <span asp-validation-for="Personal.FirstName" class="text-danger"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <label asp-for="Personal.LastName" class="control-label">نام خانوادگی</label>
+                <input asp-for="Personal.LastName" class="form-control"/>
+                <span asp-validation-for="Personal.LastName" class="text-danger"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <label asp-for="Personal.Age" class="control-label">سن</label>
+                <input asp-for="Personal.Age" class="form-control"/>
+                <span asp-validation-for="Personal.Age" class="text-danger"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <label asp-for="Personal.Bio" class="control-label">درباره</label>
+                <textarea rows="5" cols="5" asp-for="Personal.Bio" class="form-control" ></textarea>
+                <span asp-validation-for="Personal.Bio" class="text-danger"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <label asp-for="Personal.Mobile" class="control-label">شماره موبایل</label>
+                <input asp-for="Personal.Mobile" class="form-control"/>
+                <span asp-validation-for="Personal.Mobile" class="text-danger"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <label asp-for="Personal.Address" class="control-label">آدرس</label>
+                <input asp-for="Personal.Address" class="form-control"/>
+                <span asp-validation-for="Personal.Address" class="text-danger"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <label asp-for="Personal.Email" class="control-label">ایمیل</label>
+                <input asp-for="Personal.Email" class="form-control"/>
+                <span asp-validation-for="Personal.Email" class="text-danger"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <label asp-for="Personal.Instagram" class="control-label">اینستاگرام</label>
+                <input asp-for="Personal.Instagram" class="form-control"/>
+                <span asp-validation-for="Personal.Instagram" class="text-danger"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <label asp-for="Personal.Twitter" class="control-label">توئیتر</label>
+                <input asp-for="Personal.Twitter" class="form-control"/>
+                <span asp-validation-for="Personal.Twitter" class="text-danger"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <label asp-for="Personal.Github" class="control-label">گیت هاب</label>
+                <input asp-for="Personal.Github" class="form-control"/>
+                <span asp-validation-for="Personal.Github" class="text-danger"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <label asp-for="Personal.Linkedin" class="control-label">لینکدین</label>
+                <input asp-for="Personal.Linkedin" class="form-control"/>
+                <span asp-validation-for="Personal.Linkedin" class="text-danger"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <label asp-for="Personal.Telegram" class="control-label">تلگرام</label>
+                <input asp-for="Personal.Telegram" class="form-control"/>
+                <span asp-validation-for="Personal.Telegram" class="text-danger"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <input type="submit" value="ویرایش"  class="btn btn-warning"/>
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+<div>
+    <a asp-page="Admin/Index" class="btn btn-outline-secondary">داشبورد ادمین</a>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

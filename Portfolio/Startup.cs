@@ -29,6 +29,8 @@ namespace Portfolio
 
             services.AddScoped<IIndexRepository, IndexRepository>();
             services.AddScoped<IContactRepository, ContactRepository>();
+            services.AddScoped<IPersonalRepository, PersonalRepository>();
+
 
             string connetcionString = Configuration.GetConnectionString("LocalHost");
 
