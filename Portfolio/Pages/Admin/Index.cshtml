@@ -36,7 +36,8 @@
     </table>
 </div>
 
-<hr />
+<br />
+
 <hr />
 
 <br />
@@ -50,31 +51,74 @@
 <div class="align-content-center text-center">
     <table class="table table-hover table-bordered">
         <thead>
-            <tr>
-                <th>نام مهارت</th>
-                <th>درصد</th>
-                <th>عملیات</th>
-            </tr>
+        <tr>
+            <th>نام مهارت</th>
+            <th>درصد</th>
+            <th>عملیات</th>
+        </tr>
         </thead>
         <tbody>
-            @foreach (var skill in Model.viewIndex.Skills)
-            {
-                <tr>
-                    <td>@skill.Name</td>
-                    <td>@skill.Percentage</td>
-                    <td>
-                        <a asp-page="/Admin/Skill/EditSkill" asp-route-id="@skill.Id" class="btn btn-warning">
-                            ویرایش
-                        </a>
-                        |
-                        <a asp-page="/Admin/Skill/DeleteSkill" asp-route-id="@skill.Id" class="btn btn-danger">
-                            حذف
-                        </a>
-                    </td>
-                </tr>
-            }
+        @foreach (var skill in Model.viewIndex.Skills)
+        {
+            <tr>
+                <td>@skill.Name</td>
+                <td>@skill.Percentage</td>
+                <td>
+                    <a asp-page="/Admin/Skill/EditSkill" asp-route-id="@skill.Id" class="btn btn-warning">
+                        ویرایش
+                    </a>
+                    |
+                    <a asp-page="/Admin/Skill/DeleteSkill" asp-route-id="@skill.Id" class="btn btn-danger">
+                        حذف
+                    </a>
+                </td>
+            </tr>
+        }
         </tbody>
     </table>
     <br />
     <a href="/Admin/Skill/AddSkill" class="btn btn-success">افزودن</a>
+</div>
+
+
+<br />
+
+<hr />
+
+<br />
+
+<div class="display-5 fw-bold text-center">
+    خدمات
+</div>
+
+<br />
+
+<div class="align-content-center text-center">
+    <table class="table table-hover table-bordered">
+        <thead>
+        <tr>
+            <th>نام سرویس</th>
+            <th>عملیات</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var service in Model.viewIndex.Service)
+        {
+            <tr>
+                <td>@service.Name</td>
+                <td>
+                    <a asp-page="/Admin/Service/EditService" asp-route-id="@service.Id" class="btn btn-warning">
+                        ویرایش
+                    </a>
+                    |
+                    <a asp-page="/Admin/Service/DeleteService" asp-route-id="@service.Id" class="btn btn-danger">
+                        حذف
+                    </a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+    <br />
+    <a href="/Admin/Service/AddService" class="btn btn-success">افزودن</a>
 </div>

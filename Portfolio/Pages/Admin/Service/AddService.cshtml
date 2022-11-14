@@ -1,0 +1,46 @@
+﻿@page
+@model Portfolio.Pages.Admin.Service.AddServiceModel
+
+@{
+    ViewData["Title"] = "AddService";
+}
+
+<h1>افزودن خدمت</h1>
+<hr />
+<br />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Service.Name" class="control-label">نام خدمت</label>
+                <input asp-for="Service.Name" class="form-control" />
+                <span asp-validation-for="Service.Name" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="Service.Decription" class="control-label">توضیحات</label>
+                <input asp-for="Service.Decription" class="form-control" />
+                <span asp-validation-for="Service.Decription" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="Service.ClassIcon" class="control-label">کلاس آیکون</label>
+                <input asp-for="Service.ClassIcon" class="form-control" />
+                <span asp-validation-for="Service.ClassIcon" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="افزودن" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+<div>
+    <a asp-page="/Admin/Index" class="btn btn-secondary">بازگشت</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
