@@ -19,10 +19,9 @@ namespace Portfolio.Pages.Admin.PortfolioAd
             return Page();
         }
 
-        [BindProperty]
-        public DataLayer.Models.Portfolio Portfolio { get; set; }
+        [BindProperty] public DataLayer.Models.Portfolio Portfolio { get; set; }
 
-        public async Task<IActionResult> OnPostAsync()
+        public IActionResult OnPostAsync()
         {
             if (!ModelState.IsValid)
             {

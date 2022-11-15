@@ -23,7 +23,7 @@ namespace Portfolio.Pages.Admin.Service
 
         [BindProperty] public DataLayer.Models.Service Service { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public IActionResult OnGetAsync(int? id)
         {
             if (id == null)
             {
@@ -40,7 +40,7 @@ namespace Portfolio.Pages.Admin.Service
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync()
+        public IActionResult OnPostAsync()
         {
             if (!ModelState.IsValid)
             {

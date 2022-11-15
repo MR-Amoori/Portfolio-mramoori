@@ -20,10 +20,9 @@ namespace Portfolio.Pages.Admin.Skill
             return Page();
         }
 
-        [BindProperty]
-        public DataLayer.Models.Skill Skill { get; set; }
+        [BindProperty] public DataLayer.Models.Skill Skill { get; set; }
 
-        public async Task<IActionResult> OnPostAsync()
+        public IActionResult OnPostAsync()
         {
             if (!ModelState.IsValid)
             {

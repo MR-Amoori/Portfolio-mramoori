@@ -21,10 +21,9 @@ namespace Portfolio.Pages.Admin.Skill
             _repository = repository;
         }
 
-        [BindProperty]
-        public DataLayer.Models.Skill Skill { get; set; }
+        [BindProperty] public DataLayer.Models.Skill Skill { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public IActionResult OnGetAsync(int? id)
         {
             if (id == null)
             {
@@ -37,11 +36,12 @@ namespace Portfolio.Pages.Admin.Skill
             {
                 return NotFound();
             }
+
             return Page();
         }
 
 
-        public async Task<IActionResult> OnPostAsync()
+        public IActionResult OnPostAsync()
         {
             if (!ModelState.IsValid)
             {
@@ -52,13 +52,12 @@ namespace Portfolio.Pages.Admin.Skill
             {
                 _repository.EditSkill(Skill);
             }
-            catch 
+            catch
             {
                 return NotFound();
             }
 
             return RedirectToPage("/Admin/Index");
         }
-
     }
 }

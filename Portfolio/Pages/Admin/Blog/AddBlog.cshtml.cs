@@ -25,10 +25,9 @@ namespace Portfolio.Pages.Admin.Blog
             return Page();
         }
 
-        [BindProperty]
-        public DataLayer.Models.Blog Blog { get; set; }
+        [BindProperty] public DataLayer.Models.Blog Blog { get; set; }
 
-        public async Task<IActionResult> OnPostAsync()
+        public IActionResult OnPostAsync()
         {
             if (!ModelState.IsValid)
             {

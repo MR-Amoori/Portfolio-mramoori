@@ -23,7 +23,7 @@ namespace Portfolio.Pages.Admin.Personal
 
         [BindProperty] public DataLayer.Models.Personal Personal { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int id = 0)
+        public IActionResult OnGetAsync(int id = 0)
         {
             if (id == 0)
             {
@@ -40,7 +40,7 @@ namespace Portfolio.Pages.Admin.Personal
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync()
+        public IActionResult OnPostAsync()
         {
             if (!ModelState.IsValid)
             {

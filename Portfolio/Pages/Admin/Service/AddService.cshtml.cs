@@ -25,10 +25,9 @@ namespace Portfolio.Pages.Admin.Service
             return Page();
         }
 
-        [BindProperty]
-        public DataLayer.Models.Service Service { get; set; }
+        [BindProperty] public DataLayer.Models.Service Service { get; set; }
 
-        public async Task<IActionResult> OnPostAsync()
+        public IActionResult OnPostAsync()
         {
             if (!ModelState.IsValid)
             {

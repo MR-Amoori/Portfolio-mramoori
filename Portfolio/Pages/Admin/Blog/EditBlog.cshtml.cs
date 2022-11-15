@@ -10,18 +10,19 @@ using Portfolio.DataLayer.Context;
 using Portfolio.DataLayer.Models;
 using Portfolio.DataLayer.Repositories;
 
-namespace Portfolio.Pages.Admin.PortfolioAd
+namespace Portfolio.Pages.Admin.Blog
 {
-    public class EditPortfolioModel : PageModel
+    public class EditBlogModel : PageModel
     {
-        private IPortfolioRepository _repository;
+        private IBlogRepository _repository;
 
-        public EditPortfolioModel(IPortfolioRepository repository)
+        public EditBlogModel(IBlogRepository repository)
         {
             _repository = repository;
         }
 
-        [BindProperty] public DataLayer.Models.Portfolio Portfolio { get; set; }
+        [BindProperty] public DataLayer.Models.Blog Blog { get; set; }
+        private DateTime date;
 
         public IActionResult OnGetAsync(int? id)
         {
@@ -30,9 +31,9 @@ namespace Portfolio.Pages.Admin.PortfolioAd
                 return NotFound();
             }
 
-            Portfolio = _repository.GetBy(id.Value);
+            Blog = _repository.GetBy(id.Value);
 
-            if (Portfolio == null)
+            if (Blog == null)
             {
                 return NotFound();
             }
@@ -50,7 +51,7 @@ namespace Portfolio.Pages.Admin.PortfolioAd
 
             try
             {
-                _repository.Update(Portfolio);
+                _repository.Update(Blog);
             }
             catch
             {
