@@ -13,5 +13,6 @@ namespace Portfolio.DataLayer.Models
         public string Email { get; set; }
         public string Title { get; set; }
         public string Message { get; set; }
+        public DateTime CreateDate { get; set; }
     }
 }

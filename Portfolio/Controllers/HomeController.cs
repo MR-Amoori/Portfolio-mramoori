@@ -41,6 +41,7 @@ namespace Portfolio.Controllers
                 return RedirectToAction("Index", contact);
             }
 
+            contact.CreateDate = DateTime.Now;
             _contactRepository.AddMessage(contact);
             _contactRepository.Save();
 

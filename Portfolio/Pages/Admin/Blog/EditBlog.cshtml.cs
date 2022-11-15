@@ -22,7 +22,6 @@ namespace Portfolio.Pages.Admin.Blog
         }
 
         [BindProperty] public DataLayer.Models.Blog Blog { get; set; }
-        private DateTime date;
 
         public IActionResult OnGetAsync(int? id)
         {

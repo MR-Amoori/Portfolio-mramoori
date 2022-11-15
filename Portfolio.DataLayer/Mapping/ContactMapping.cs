@@ -25,6 +25,8 @@ namespace Portfolio.DataLayer.Mapping
             builder.Property(x => x.Message).HasMaxLength(1500).IsRequired();
 
             builder.Property(x => x.Name).HasMaxLength(100).IsRequired();
+
+            builder.Property(x => x.CreateDate).IsRequired();
         }
     }
 }

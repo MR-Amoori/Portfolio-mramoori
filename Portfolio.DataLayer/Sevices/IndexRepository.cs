@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Portfolio.DataLayer.Context;
+using Portfolio.DataLayer.Models;
 using Portfolio.DataLayer.Repositories;
 using Portfolio.DataLayer.ViewModels;
 using Portfolio = Portfolio.DataLayer.Models.Portfolio;
@@ -36,6 +37,11 @@ namespace Portfolio.DataLayer.Sevices
 
 
             return index;
+        }
+
+        public List<Contact> GetContact()
+        {
+            return _context.Contacts.ToList();
         }
 
         public void Save()

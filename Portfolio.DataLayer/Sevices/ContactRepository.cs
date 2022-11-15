@@ -21,6 +21,18 @@ namespace Portfolio.DataLayer.Sevices
         public void AddMessage(Contact contact)
         {
             _context.Contacts.Add(contact);
+            Save();
+        }
+
+        public Contact GetBy(int id)
+        {
+            return _context.Contacts.FirstOrDefault(x => x.Id == id);
+        }
+
+        public void Delete(int id)
+        {
+            _context.Contacts.Remove(GetBy(id));
+            Save();
         }
 
         public void Save()

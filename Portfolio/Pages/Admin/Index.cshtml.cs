@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Portfolio.DataLayer.Context;
+using Portfolio.DataLayer.Models;
 using Portfolio.DataLayer.Repositories;
 using Portfolio.DataLayer.ViewModels;
 
@@ -16,6 +17,7 @@ namespace Portfolio.Pages.Admin
     {
         private readonly IIndexRepository _repository;
         public IndexViewModel viewIndex { get; set; }
+        public List<DataLayer.Models.Contact> ContactsViewModel { get; set; }
 
         public IndexModel(IIndexRepository repository)
         {
@@ -25,6 +27,7 @@ namespace Portfolio.Pages.Admin
         public void OnGet()
         {
             viewIndex = _repository.GetIndex();
+            ContactsViewModel = _repository.GetContact();
         }
 
         public void OnGetAdminDashboard()

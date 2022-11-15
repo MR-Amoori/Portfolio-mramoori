@@ -1,0 +1,49 @@
+﻿@page
+@model Portfolio.Pages.Admin.Contact.ShowContactModel
+
+@{
+    ViewData["Title"] = "ShowContact";
+}
+
+<h1>مشاهده پیام</h1>
+<hr />
+<br />
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            فرستنده
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contact.Name)
+        </dd>
+        <dt class="col-sm-2">
+            ایمیل
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contact.Email)
+        </dd>
+        <dt class="col-sm-2">
+            عنوان
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contact.Title)
+        </dd>
+        <dt class="col-sm-2">
+            پیام
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contact.Message)
+        </dd>
+        <dt class="col-sm-2">
+            تاریخ
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contact.CreateDate)
+        </dd>
+    </dl>
+</div>
+<br />
+<div>
+
+    <a asp-page="/Admin/Index" class="btn btn-secondary">بازگشت</a>
+</div>
