@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Portfolio.DataLayer.Mapping;
 using Portfolio.DataLayer.Models;
@@ -10,7 +11,7 @@ using Portfolio.DataLayer.ViewModels;
 
 namespace Portfolio.DataLayer.Context
 {
-    public class PortfolioContext : DbContext
+    public class PortfolioContext : IdentityDbContext
     {
         public PortfolioContext(DbContextOptions<PortfolioContext> options) : base(options)
         {
@@ -23,6 +24,7 @@ namespace Portfolio.DataLayer.Context
         public DbSet<Blog> Blogs { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Admin> Admins { get; set; }
+
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

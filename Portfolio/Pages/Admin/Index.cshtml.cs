@@ -12,7 +12,7 @@ using Portfolio.DataLayer.ViewModels;
 
 namespace Portfolio.Pages.Admin
 {
-   // [Authorize]
+    [Authorize]
     public class IndexModel : PageModel
     {
         private readonly IIndexRepository _repository;

@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Portfolio.DataLayer.Mapping
 {
-    class PortfolioMapping : IEntityTypeConfiguration<Models.Portfolio>
+    internal class PortfolioMapping : IEntityTypeConfiguration<Models.Portfolio>
     {
         public void Configure(EntityTypeBuilder<Models.Portfolio> builder)
         {

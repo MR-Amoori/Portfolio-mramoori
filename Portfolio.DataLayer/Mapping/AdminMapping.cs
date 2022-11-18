@@ -9,7 +9,7 @@ using Portfolio.DataLayer.Models;
 
 namespace Portfolio.DataLayer.Mapping
 {
-    class AdminMapping : IEntityTypeConfiguration<Admin>
+    internal class AdminMapping : IEntityTypeConfiguration<Admin>
     {
         public void Configure(EntityTypeBuilder<Admin> builder)
         {

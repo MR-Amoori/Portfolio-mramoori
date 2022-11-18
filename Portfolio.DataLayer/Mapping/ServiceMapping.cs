@@ -9,7 +9,7 @@ using Portfolio.DataLayer.Models;
 
 namespace Portfolio.DataLayer.Mapping
 {
-    class ServiceMapping : IEntityTypeConfiguration<Service>
+    internal class ServiceMapping : IEntityTypeConfiguration<Service>
     {
         public void Configure(EntityTypeBuilder<Service> builder)
         {

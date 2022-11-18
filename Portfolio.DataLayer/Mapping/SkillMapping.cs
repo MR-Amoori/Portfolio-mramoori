@@ -9,7 +9,7 @@ using Portfolio.DataLayer.Models;
 
 namespace Portfolio.DataLayer.Mapping
 {
-    class SkillMapping : IEntityTypeConfiguration<Skill>
+    internal class SkillMapping : IEntityTypeConfiguration<Skill>
     {
         public void Configure(EntityTypeBuilder<Skill> builder)
         {

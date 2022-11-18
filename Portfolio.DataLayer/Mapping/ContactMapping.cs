@@ -10,7 +10,7 @@ using Portfolio.DataLayer.Models;
 
 namespace Portfolio.DataLayer.Mapping
 {
-    class ContactMapping : IEntityTypeConfiguration<Contact>
+    internal class ContactMapping : IEntityTypeConfiguration<Contact>
     {
         public void Configure(EntityTypeBuilder<Contact> builder)
         {

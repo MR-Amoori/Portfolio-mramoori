@@ -16,8 +16,8 @@ namespace Portfolio.Controllers
 {
     public class HomeController : Controller
     {
-        IIndexRepository _repository;
-        IContactRepository _contactRepository;
+        private IIndexRepository _repository;
+        private IContactRepository _contactRepository;
 
         private PortfolioContext _context;
         public HomeController(IIndexRepository repository, PortfolioContext context, IContactRepository contactRepository)

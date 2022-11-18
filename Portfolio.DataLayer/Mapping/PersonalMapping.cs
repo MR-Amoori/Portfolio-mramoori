@@ -9,7 +9,7 @@ using Portfolio.DataLayer.Models;
 
 namespace Portfolio.DataLayer.Mapping
 {
-    class PersonalMapping : IEntityTypeConfiguration<Personal>
+    internal class PersonalMapping : IEntityTypeConfiguration<Personal>
     {
         public void Configure(EntityTypeBuilder<Personal> builder)
         {

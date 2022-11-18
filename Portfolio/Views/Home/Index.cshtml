@@ -87,6 +87,11 @@
 
 
             <a href="~/MyResume/MrAmoori-Portfolio.pdf" class="btn">دانلود رزومه</a>
+            <br />
+            @if (User.Identity.IsAuthenticated)
+            {
+                <a asp-page="/Admin/Index" class="btn">ورود به پنل مدیریت</a>
+            }
         </div>
 
     </div>
