@@ -48,6 +48,11 @@ namespace Portfolio
                 .AddDefaultTokenProviders();
 
             #endregion
+
+            services.AddAuthorization(options =>
+                options.AddPolicy("Admin", policy =>
+                    policy.RequireClaim("AdminNumber"))
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

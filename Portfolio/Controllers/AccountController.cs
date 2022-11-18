@@ -95,7 +95,7 @@ namespace Portfolio.Controllers
             return RedirectToAction(nameof(HomeController.Index), "Home");
         }
 
-        public IActionResult AccessDenide()
+        public IActionResult AccessDenied()
         {
             return View();
         }

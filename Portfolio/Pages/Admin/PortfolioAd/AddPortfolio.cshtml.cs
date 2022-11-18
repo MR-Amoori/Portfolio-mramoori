@@ -1,10 +1,12 @@
 ﻿using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Portfolio.DataLayer.Repositories;
 
 namespace Portfolio.Pages.Admin.PortfolioAd
 {
+    [Authorize]
     public class AddPortfolioModel : PageModel
     {
         private IPortfolioRepository _repository;
