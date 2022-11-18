@@ -19,38 +19,38 @@ namespace Portfolio.Controllers
             _signInManager = signInManager;
         }
 
-        [HttpGet]
-        public IActionResult Register()
-        {
-            return View();
-        }
+        //[HttpGet]
+        //public IActionResult Register()
+        //{
+        //    return View();
+        //}
 
-        [HttpPost]
-        public async Task<IActionResult> Register(RegisterViewModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                IdentityUser user = new IdentityUser();
-                user.Email = model.Email;
-                user.UserName = model.Email;
+        //[HttpPost]
+        //public async Task<IActionResult> Register(RegisterViewModel model)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        IdentityUser user = new IdentityUser();
+        //        user.Email = model.Email;
+        //        user.UserName = model.Email;
 
-                var result = await _uerManager.CreateAsync(user, model.Password);
+        //        var result = await _uerManager.CreateAsync(user, model.Password);
 
-                if (result.Succeeded)
-                {
-                    return RedirectToAction("Login", "Account");
-                }
-                else
-                {
-                    foreach (var error in result.Errors)
-                    {
-                        ModelState.AddModelError(string.Empty, error.Description);
-                    }
-                }
-            }
+        //        if (result.Succeeded)
+        //        {
+        //            return RedirectToAction("Login", "Account");
+        //        }
+        //        else
+        //        {
+        //            foreach (var error in result.Errors)
+        //            {
+        //                ModelState.AddModelError(string.Empty, error.Description);
+        //            }
+        //        }
+        //    }
 
-            return View(model);
-        }
+        //    return View(model);
+        //}
 
 
         [HttpGet]
