@@ -9,6 +9,7 @@ using Microsoft.Extensions.Hosting;
 using Portfolio.DataLayer.Context;
 using Portfolio.DataLayer.Repositories;
 using Portfolio.DataLayer.Sevices;
+using WebMarkupMin.AspNetCore5;
 
 
 namespace Portfolio
@@ -25,6 +26,12 @@ namespace Portfolio
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddWebMarkupMin()
+                .AddHtmlMinification()
+                .AddHttpCompression()
+                .AddXmlMinification()
+                .AddXhtmlMinification();
+
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddRazorPages().AddRazorRuntimeCompilation();
 
@@ -76,6 +83,8 @@ namespace Portfolio
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseWebMarkupMin();
 
             app.UseEndpoints(endpoints =>
             {
