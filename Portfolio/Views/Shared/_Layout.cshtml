@@ -5,10 +5,28 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>@*@ViewData["Title"]*@ سایت شخصی محمدرضا عموری </title>
+    @RenderSection("MetaTags", false)
+    <meta name="language" content="FA"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="~/css/style.css">
+
+    <meta property="og:title" content="سایت شخصی محمدرضا عموری"/>
+    <meta property="og:description" content="محمدرضا عموری هستم برنامه نویس دات نت. شما در این سایت شخصی می‌تونید روزمه کاری من رو مشاهده بفرمایید"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://mramoori.ir"/>
+    <meta property="og:image" content="https://mramoori.ir/Images/Avatar.jpg">
+
+    <meta name="twitter:image" content="https://mramoori.ir/Images/Avatar.jpg"/>
+    <meta name="twitter:description" content="محمدرضا عموری هستم برنامه نویس دات نت. شما در این سایت شخصی می‌تونید روزمه کاری من رو مشاهده بفرمایید"/>
+    <meta name="twitter:site" content="https://mramoori.ir"/>
     
-    @await RenderSectionAsync("Styles" , required: false)
+    <meta name="keywords" content="محمدرضا عموری, برنامه نویس دات نت عموری, محمدرضا برنامه نویس, عموری برنامه نویس, محمدرضا عموری برنامه نویس سی شارپ, محمد رضا عموری برنامه نویس, محمد رضا عموری برنامه نویس دات نت, برنامه نویس محمدرضا عموری">
+    <meta name="author" content="محمدرضا عموری">
+
+    <link href="https://mramoori.ir" rel="canonical"/>
+
+
+    @await RenderSectionAsync("Styles", required: false)
 
 </head>
 <body>

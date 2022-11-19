@@ -5,6 +5,11 @@
     ViewData["Title"] = "";
 }
 
+@section MetaTags
+{
+    <meta name="description" content="محمدرضا عموری هستم برنامه نویس دات نت. شما در این سایت شخصی می‌تونید روزمه کاری من رو مشاهده بفرمایید." />
+}
+
 @section Styles
 {
     <link href="~/css/cssprogress.css" rel="stylesheet" />
@@ -22,7 +27,7 @@
     <div id="particles-js"></div>
 
     <div class="content">
-        <img class="tilt" src="~/images/Avatar.jpg" alt="">
+        <img class="tilt" src="~/images/Avatar.jpg" alt="من">
         <h3>
             @Model.Personal.FirstName <span>@Model.Personal.LastName</span>
         </h3>
@@ -111,32 +116,32 @@
 
 
             <a href="https://www.instagram.com/@Model.Personal.Instagram">
-                <img src="~/Icons/instagram.gif" width="60px" />
+                <img src="~/Icons/instagram.gif" alt="اینستاگرام" width="60px" />
             </a>
 
             <span>&emsp;&emsp;</span>
 
 
             <a href="https://twitter.com/@Model.Personal.Twitter">
-                <img src="~/Icons/twitter.gif" width="60px" />
+                <img src="~/Icons/twitter.gif" alt="توئییتر" width="60px" />
             </a>
 
             <span>&emsp;&emsp;</span>
             
             <a href="https://github.com/@Model.Personal.Github">
-                <img src="~/Icons/github.gif" width="60px" />
+                <img src="~/Icons/github.gif" alt="گیت هاب" width="60px" />
             </a>
 
             <span>&emsp;&emsp;</span>
             
             <a href="https://www.linkedin.com/in/@Model.Personal.Linkedin">
-                <img src="~/Icons/linkedin.gif" width="60px" />
+                <img src="~/Icons/linkedin.gif" alt="لینکدین" width="60px" />
             </a>
 
             <span>&emsp;&emsp;</span>
 
             <a href="https://t.me/@Model.Personal.Telegram">
-                <img src="~/Icons/telegram.gif" width="60px" />
+                <img src="~/Icons/telegram.gif" alt="تلگرام" width="60px" />
             </a>
 
         </div>
@@ -244,7 +249,7 @@
     <div class="row">
 
         <div class="image">
-            <img class="tilt" src="~/images/contact-img.svg" alt="">
+            <img class="tilt" src="~/images/contact-img.svg" alt="تماس با من">
         </div>
 
         <form asp-action="MessageToMe" asp-controller="Home" method="post">
