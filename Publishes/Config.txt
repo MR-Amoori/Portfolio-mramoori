@@ -1,0 +1,1 @@
+ "Production": "Data Source=5.160.247.50\\MSSQLSERVER2016; Initial Catalog=Portfolio_MrAmoori_DB; User Id=mohamadreza; Password=Mohamad_021@; MultipleActiveResultSets=true"
