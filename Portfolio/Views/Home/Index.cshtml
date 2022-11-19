@@ -7,16 +7,14 @@
 
 @section MetaTags
 {
-    <meta name="description" content="محمدرضا عموری هستم برنامه نویس دات نت. شما در این سایت شخصی می‌تونید روزمه کاری من رو مشاهده بفرمایید." />
+    <meta name="description" content="محمدرضا عموری هستم برنامه نویس دات نت. شما در این سایت شخصی می‌تونید روزمه کاری من رو مشاهده بفرمایید."/>
 }
 
 @section Styles
 {
-    <link href="~/css/cssprogress.css" rel="stylesheet" />
+    <link href="~/css/cssprogress.css" rel="stylesheet"/>
     <style>
-        #email-link {
-            color: black;
-        }
+        #email-link { color: black; }
     </style>
 }
 
@@ -54,18 +52,18 @@
             <h3> من <span> @(Model.Personal.FirstName + " " + Model.Personal.LastName) </span> هستم </h3>
             <p class="info">
                 توسعه دهنده Full Stack وب هستم.
-                <br />
+                <br/>
                 علاقه مند به ساختن برنامه‌ های کاربردی تحت وب، ویندوز و ربات بوده و اکثر مطالعاتم در این حوزه می باشد.
-                <br />
+                <br/>
                 متولد 1383 و ساکن استان خوزستان هستم ؛ فعالیتم در حوزه برنامه نویسی و آی تی رو از سال 1397 با برخی از تکنولوژی ها شروع کردم و از سال 1399 بصورت جدی وارد این دنیای بی انتها شدم.
-                <br />
+                <br/>
                 سال هاست تمرکز خودم رو روی تکنولوژی های NET. گذاشتم و تقریبا روی تمام تکنولوژی های مایکروسافت تسلط کافی دارم.
-                <br />
+                <br/>
                 من به زبان برنامه نویسی سی شارپ مسلطم و معمولا برای وب، تکنولوژی این زبان یعنی Asp.Net Core رو کار می کنم. همچنین برای اپلیکیشن های تحت دسکتاپ و ویندوز هم از تکنولوژی های WinForms و WPF استفاده می کنم.
-                <br />
+                <br/>
                 تخصص من در زمینه برنامه نویسی هست اما در شاخه های امنیت، شبکه، پشتیبانی، گرافیک و فتوشاپ هم مهارت دارم.
                 برنامه نویسی برای ربات های اینستاگرام و تلگرام هم جز علایق من بوده که در این زمینه هم فعالیت می کنم.
-                <br />
+                <br/>
                 در حال حاظر محصل رشته شبکه و نرم افزار هستم.
 
             </p>
@@ -92,7 +90,7 @@
 
 
             <a href="~/MyResume/MrAmoori-Portfolio.pdf" class="btn">دانلود رزومه</a>
-            <br />
+            <br/>
             @if (User.Identity.IsAuthenticated)
             {
                 <a asp-page="/Admin/Index" class="btn">ورود به پنل مدیریت</a>
@@ -116,32 +114,32 @@
 
 
             <a href="https://www.instagram.com/@Model.Personal.Instagram">
-                <img src="~/Icons/instagram.gif" alt="اینستاگرام" width="60px" />
+                <img src="~/Icons/instagram.gif" alt="اینستاگرام" width="60px"/>
             </a>
 
             <span>&emsp;&emsp;</span>
 
 
             <a href="https://twitter.com/@Model.Personal.Twitter">
-                <img src="~/Icons/twitter.gif" alt="توئییتر" width="60px" />
+                <img src="~/Icons/twitter.gif" alt="توئییتر" width="60px"/>
             </a>
 
             <span>&emsp;&emsp;</span>
-            
+
             <a href="https://github.com/@Model.Personal.Github">
-                <img src="~/Icons/github.gif" alt="گیت هاب" width="60px" />
+                <img src="~/Icons/github.gif" alt="گیت هاب" width="60px"/>
             </a>
 
             <span>&emsp;&emsp;</span>
-            
+
             <a href="https://www.linkedin.com/in/@Model.Personal.Linkedin">
-                <img src="~/Icons/linkedin.gif" alt="لینکدین" width="60px" />
+                <img src="~/Icons/linkedin.gif" alt="لینکدین" width="60px"/>
             </a>
 
             <span>&emsp;&emsp;</span>
 
             <a href="https://t.me/@Model.Personal.Telegram">
-                <img src="~/Icons/telegram.gif" alt="تلگرام" width="60px" />
+                <img src="~/Icons/telegram.gif" alt="تلگرام" width="60px"/>
             </a>
 
         </div>
@@ -275,6 +273,22 @@
 
 </section>
 
+
+<audio autoplay loop id="myAudio">
+    <source src="~/Audio/music.mp3" type="audio/mpeg"/>
+</audio>
+
+<script>
+    var x = document.getElementById("myAudio");
+
+    function playAudio() {
+        x.play();
+    }
+
+    function pauseAudio() {
+        x.pause();
+    }
+</script>
 
 <!-- contact section ends -->
 
