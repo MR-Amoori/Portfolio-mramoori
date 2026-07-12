@@ -203,6 +203,13 @@ header .navbar a:hover { color: var(--green); }
     line-height: 2;
 }
 
+.about .row .content .info p {
+    color: #333;
+    font-size: 1.7rem;
+    padding: 1rem 0;
+    line-height: 2;
+}
+
 .about .row .content .box-container {
     display: flex;
     flex-wrap: wrap;

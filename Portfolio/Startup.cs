@@ -44,7 +44,8 @@ namespace Portfolio
             services.AddScoped<IBlogRepository, BlogRepository>();
 
 
-            string connetcionString = Configuration.GetConnectionString("Production");
+            // string connetcionString = Configuration.GetConnectionString("Production");
+            string connetcionString = Configuration.GetConnectionString("LocalHost");
 
             services.AddDbContext<PortfolioContext>(options => options.UseSqlServer(connetcionString));
 
