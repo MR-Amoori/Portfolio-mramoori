@@ -59,7 +59,25 @@ namespace Portfolio.Controllers
             return View();
         }
 
-        [HttpPost]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel model, string ReturnUrl)
         {
             ViewData["ReturnUrl"] = ReturnUrl;
@@ -71,7 +89,7 @@ namespace Portfolio.Controllers
 
                 if (result.Succeeded)
                 {
-                    if (Url.IsLocalUrl(ReturnUrl))
+                    if (!string.IsNullOrEmpty(ReturnUrl) && Url.IsLocalUrl(ReturnUrl))
                     {
                         return Redirect(ReturnUrl);
                     }
