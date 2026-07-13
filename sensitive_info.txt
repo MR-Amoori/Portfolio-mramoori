@@ -1,0 +1,21 @@
+=== اطلاعات حساس پروژه ===
+
+1. Connection String (Production):
+   Data Source=5.160.247.50\MSSQLSERVER2016; Initial Catalog=Portfolio_MrAmoori_DB; User Id=mohamadreza; Password=Mohamad_021@; MultipleActiveResultSets=true
+
+2. فایل‌های مرتبط با اطلاعات حساس:
+   - .\Publishes\Config.txt: حاوی Connection String برای محیط Production.
+   - .\Portfolio.DataLayer\ViewModels\RegisterViewModel.cs: حاوی فیلدهای Email و Password برای ثبت‌نام.
+   - .\Portfolio.DataLayer\ViewModels\LoginViewModel.cs: حاوی فیلدهای Email و Password برای ورود.
+   - .\Portfolio.DataLayer\Migrations\*: حاوی اطلاعات مربوط به فیلدهای Email و Password در دیتابیس.
+
+3. فیلدهای حساس در مدل‌ها:
+   - RegisterViewModel: Email, Password, ConfrimPassword
+   - LoginViewModel: Email, Password
+
+4. فیلدهای حساس در دیتابیس:
+   - AspNetUsers: Email, PasswordHash
+   - Admin: Email, Password
+   - Contact: Email
+
+=== پایان اطلاعات حساس ===
