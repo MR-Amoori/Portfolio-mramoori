@@ -1,7 +1,8 @@
 === اطلاعات حساس پروژه ===
 
-1. Connection String (Production):
-   Data Source=5.160.247.50\MSSQLSERVER2016; Initial Catalog=Portfolio_MrAmoori_DB; User Id=mohamadreza; Password=Mohamad_021@; MultipleActiveResultSets=true
+1. Connection Strings:
+   - LocalHost: Data Source=MR-AMOORI-PC;Initial Catalog=Portfolio_MrAmoori_DB;Integrated Security=True
+   - Production: Data Source=5.160.247.50\MSSQLSERVER2016; Initial Catalog=Portfolio_MrAmoori_DB; User Id=test; Password=test; MultipleActiveResultSets=true
 
 2. فایل‌های مرتبط با اطلاعات حساس:
    - .\Publishes\Config.txt: حاوی Connection String برای محیط Production.
@@ -17,5 +18,39 @@
    - AspNetUsers: Email, PasswordHash
    - Admin: Email, Password
    - Contact: Email
+
+5. اطلاعات دیتابیس:
+   - نام دیتابیس: Portfolio_MrAmoori_DB
+   - جدول‌های اصلی:
+     - Personal: اطلاعات شخصی
+     - Services: خدمات ارائه شده
+     - Portfolios: پروژه‌ها
+     - Skills: مهارت‌ها
+     - Blogs: مقالات
+     - Contacts: اطلاعات تماس
+     - Admins: اطلاعات مدیران
+
+6. تنظیمات احراز هویت:
+   - استفاده از ASP.NET Core Identity برای مدیریت کاربران و نقش‌ها.
+   - سیاست Admin برای دسترسی به بخش مدیریت.
+
+=== آموزش‌ها ===
+
+1. تغییر بین محیط‌های LocalHost و Production:
+   - برای تغییر به محیط LocalHost، در فایل Startup.cs خط زیر را فعال کنید:
+     string connetcionString = Configuration.GetConnectionString("LocalHost");
+   - برای تغییر به محیط Production، خط زیر را فعال کنید:
+     string connetcionString = Configuration.GetConnectionString("Production");
+
+2. پابلیش پروژه:
+   - ابتدا پروژه را Build کنید:
+     dotnet build --configuration Release
+   - سپس پروژه را Publish کنید:
+     dotnet publish --configuration Release --output ./publish
+   - فایل‌های Publish شده در پوشه ./publish قرار می‌گیرند.
+
+3. تغییر Connection String:
+   - Connection String را در فایل appsettings.json تغییر دهید.
+   - سپس پروژه را مجدداً Build و Run کنید.
 
 === پایان اطلاعات حساس ===
