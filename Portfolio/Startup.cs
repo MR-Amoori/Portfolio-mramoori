@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -10,6 +11,7 @@ using Portfolio.DataLayer.Context;
 using Portfolio.DataLayer.Repositories;
 using Portfolio.DataLayer.Sevices;
 using WebMarkupMin.AspNetCore5;
+using System;
 
 
 namespace Portfolio
@@ -51,9 +53,28 @@ namespace Portfolio
 
             #region Identity
 
-            services.AddIdentity<IdentityUser, IdentityRole>()
+                        services.AddIdentity<IdentityUser, IdentityRole>()
                 .AddEntityFrameworkStores<PortfolioContext>()
                 .AddDefaultTokenProviders();
+
+            // Old configuration
+            // services.ConfigureApplicationCookie(options =>
+            // {
+            //     options.ExpireTimeSpan = TimeSpan.FromMinutes(20);
+            //     options.SlidingExpiration = true;
+            // });
+
+            // New configuration for session timeout
+
+
+
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.ExpireTimeSpan = TimeSpan.FromHours(1);
+                options.SlidingExpiration = true;
+                options.Cookie.SameSite = SameSiteMode.Lax;
+                options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+            });
 
             #endregion
 
