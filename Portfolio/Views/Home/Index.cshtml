@@ -51,8 +51,8 @@
         <div class="content">
             <h3> من <span> @(Model.Personal.FirstName + " " + Model.Personal.LastName) </span> هستم </h3>
                         <p class="info">
-                @Model.Personal.Bio
-            </p>
+                            @Html.Raw(@Model.Personal.Bio)
+                        </p>
 
 
             <div class="box-container">
@@ -90,7 +90,7 @@
 <section style="min-height: 0;" class="services" id="services">
 
     <h1 class="heading">
-        <span>راه ارتباطی</span>
+        <span>راه‌های ارتباطی با</span>
         من
     </h1>
 
@@ -106,7 +106,7 @@
             <span>&emsp;&emsp;</span>
 
 
-            <a href="https://twitter.com/@Model.Personal.Twitter">
+            <a href="https://x.com/@Model.Personal.Twitter">
                 <img src="~/Icons/twitter.gif" alt="توئییتر" width="60px"/>
             </a>
 
@@ -138,7 +138,7 @@
 <section class="services" id="services">
 
     <h1 class="heading">
-        <span>مهارت</span>
+        <span>مهارت های</span>
         من
     </h1>
 
