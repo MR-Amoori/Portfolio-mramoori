@@ -1,0 +1,19 @@
+@page
+@model Portfolio.Pages.Admin.BusinessLicense.DeleteBusinessLicenseModel
+@{
+    ViewData["Title"] = "حذف جواز کسب";
+}
+
+<div class="text-center">
+    <h1>آیا مطمئن هستید که می‌خواهید این جواز کسب را حذف کنید؟</h1>
+</div>
+
+<br />
+
+<div class="text-center">
+    <form method="post">
+        <input type="hidden" name="id" value="@Model.RouteData.Values["id"]" />
+        <input type="submit" class="btn btn-danger" value="بله، حذف کن" />
+        <a asp-page="/Admin/Index" class="btn btn-secondary">خیر، برگرد</a>
+    </form>
+</div>

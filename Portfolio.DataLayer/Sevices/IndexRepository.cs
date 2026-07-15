@@ -35,6 +35,10 @@ namespace Portfolio.DataLayer.Sevices
 
             index.Skills = _context.Skills.ToList();
 
+            // Added new entities for BusinessLicense and Certificate
+            index.BusinessLicenses = _context.BusinessLicenses.ToList();
+
+            index.Certificates = _context.Certificates.ToList();
 
             return index;
         }

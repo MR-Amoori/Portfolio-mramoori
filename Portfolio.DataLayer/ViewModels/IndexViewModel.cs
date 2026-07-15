@@ -15,5 +15,8 @@ namespace Portfolio.DataLayer.ViewModels
         public List<Skill> Skills { get; set; }
         public Contact Contact { get; set; }
         public List<Blog> Blogs { get; set; }
+        // Added new entities for BusinessLicense and Certificate
+        public List<BusinessLicense> BusinessLicenses { get; set; }
+        public List<Certificate> Certificates { get; set; }
     }
 }

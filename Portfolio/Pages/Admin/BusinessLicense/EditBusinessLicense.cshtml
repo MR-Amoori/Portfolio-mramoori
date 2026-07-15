@@ -1,0 +1,46 @@
+@page
+@model Portfolio.Pages.Admin.BusinessLicense.EditBusinessLicenseModel
+@{
+    ViewData["Title"] = "ویرایش جواز کسب";
+}
+
+<div class="text-center">
+    <h1>ویرایش جواز کسب</h1>
+</div>
+
+<br />
+
+<div class="row">
+    <div class="col-12">
+        <form method="post" enctype="multipart/form-data">
+            
+            <div class="form-group">
+                <label asp-for="BusinessLicense.Title">عنوان</label>
+                <input asp-for="BusinessLicense.Title" class="form-control" />
+                <span asp-validation-for="BusinessLicense.Title" class="text-danger"></span>
+            </div>
+
+            <br />
+
+            <div class="form-group">
+                <label asp-for="BusinessLicense.ImagePath">لینک عکس</label>
+                <input asp-for="BusinessLicense.ImagePath" class="form-control" />
+                <span asp-validation-for="BusinessLicense.ImagePath" class="text-danger"></span>
+            </div>
+
+            <br />
+
+            <div class="form-group">
+                <label asp-for="BusinessLicense.VerificationLink">لینک صحت سنجی</label>
+                <input asp-for="BusinessLicense.VerificationLink" class="form-control" />
+                <span asp-validation-for="BusinessLicense.VerificationLink" class="text-danger"></span>
+            </div>
+
+            <br />
+
+            <input type="submit" class="btn btn-warning" value="ویرایش" />
+            <a asp-page="/Admin/Index" class="btn btn-secondary">انصراف</a>
+
+        </form>
+    </div>
+</div>

@@ -243,3 +243,87 @@
         </tbody>
     </table>
 </div>
+
+<br />
+
+<hr />
+
+<br />
+
+<div class="display-5 fw-bold text-center">
+    جواز های کسب
+</div>
+
+<br />
+
+<div class="align-content-center text-center">
+    <table class="table table-hover table-bordered">
+        <thead>
+            <tr>
+                <th>نام جواز کسب</th>
+                <th>عملیات</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var businessLicense in Model.viewIndex.BusinessLicenses)
+            {
+                <tr>
+                    <td>@businessLicense.Title</td>
+                    <td>
+                        <a asp-page="/Admin/BusinessLicense/EditBusinessLicense" asp-route-id="@businessLicense.Id" class="btn btn-warning">
+                            ویرایش
+                        </a>
+                        |
+                        <a asp-page="/Admin/BusinessLicense/DeleteBusinessLicense" asp-route-id="@businessLicense.Id" class="btn btn-danger">
+                            حذف
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <br />
+    <a href="/Admin/BusinessLicense/AddBusinessLicense" class="btn btn-success">افزودن</a>
+</div>
+
+<br />
+
+<hr />
+
+<br />
+
+<div class="display-5 fw-bold text-center">
+    مدارک
+</div>
+
+<br />
+
+<div class="align-content-center text-center">
+    <table class="table table-hover table-bordered">
+        <thead>
+            <tr>
+                <th>نام مدرک</th>
+                <th>عملیات</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var certificate in Model.viewIndex.Certificates)
+            {
+                <tr>
+                    <td>@certificate.Title</td>
+                    <td>
+                        <a asp-page="/Admin/Certificate/EditCertificate" asp-route-id="@certificate.Id" class="btn btn-warning">
+                            ویرایش
+                        </a>
+                        |
+                        <a asp-page="/Admin/Certificate/DeleteCertificate" asp-route-id="@certificate.Id" class="btn btn-danger">
+                            حذف
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <br />
+    <a href="/Admin/Certificate/AddCertificate" class="btn btn-success">افزودن</a>
+</div>

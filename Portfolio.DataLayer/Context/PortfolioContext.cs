@@ -24,6 +24,9 @@ namespace Portfolio.DataLayer.Context
         public DbSet<Blog> Blogs { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Admin> Admins { get; set; }
+        // Added new DbSets for BusinessLicense and Certificate
+        public DbSet<BusinessLicense> BusinessLicenses { get; set; }
+        public DbSet<Certificate> Certificates { get; set; }
 
 
 

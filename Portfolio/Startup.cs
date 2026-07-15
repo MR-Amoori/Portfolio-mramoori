@@ -42,10 +42,13 @@ namespace Portfolio
             services.AddScoped<IServicesRepository, ServicesRepository>();
             services.AddScoped<IPortfolioRepository, PortfolioRepository>();
             services.AddScoped<IBlogRepository, BlogRepository>();
+            // Added new repositories for BusinessLicense and Certificate
+            services.AddScoped<IBusinessLicenseRepository, BusinessLicenseRepository>();
+            services.AddScoped<ICertificateRepository, CertificateRepository>();
 
 
-           //  string connetcionString = Configuration.GetConnectionString("localhost");
-            string connetcionString = Configuration.GetConnectionString("Production");
+             string connetcionString = Configuration.GetConnectionString("localhost");
+           // string connetcionString = Configuration.GetConnectionString("Production");
 
             services.AddDbContext<PortfolioContext>(options => options.UseSqlServer(connetcionString));
 
