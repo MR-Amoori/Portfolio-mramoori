@@ -291,12 +291,16 @@ header .navbar a:hover { color: var(--green); }
 
 .portfolio .box-container .box:hover .content { left: 0; }
 
+.businessLicenses {
+    padding: 1rem 9% 0.5rem 9%;
+}
+
 .businessLicenses .box-container {
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
     justify-content: center;
-    padding: 2rem 0;
+    padding: 0;
 }
 
 .businessLicenses .box-container .box {
@@ -333,6 +337,10 @@ header .navbar a:hover { color: var(--green); }
 }
 
 .businessLicenses .box-container .box:hover .content { opacity: 1; pointer-events: auto; }
+
+.certificates {
+    padding: 0.5rem 9% 1rem 9%;
+}
 
 .certificates .box-container {
     display: flex;
@@ -520,6 +528,8 @@ header .navbar a:hover { color: var(--green); }
     .businessLicenses .box-container .box { max-width: 95%; }
     .businessLicenses .box-container .box img { max-height: 50vh; }
     .certificates .box-container .box { height: 20rem; }
+    .businessLicenses { padding: 0.5rem 2rem 0.3rem 2rem; }
+    .certificates { padding: 0.3rem 2rem 0.5rem 2rem; }
 }
 
 @media (max-width: 450px) {

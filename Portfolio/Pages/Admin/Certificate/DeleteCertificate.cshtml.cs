@@ -19,9 +19,18 @@ namespace Portfolio.Pages.Admin.Certificate
             _repository = repository;
         }
 
-        public IActionResult OnPost(int id)
+        [BindProperty]
+        public int Id { get; set; }
+
+        public IActionResult OnGet(int id)
         {
-            _repository.Delete(id);
+            Id = id;
+            return Page();
+        }
+
+        public IActionResult OnPost()
+        {
+            _repository.Delete(Id);
             return RedirectToPage("/Admin/Index");
         }
     }
