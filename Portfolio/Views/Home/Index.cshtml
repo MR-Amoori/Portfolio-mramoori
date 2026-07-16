@@ -179,7 +179,7 @@
 <!-- services section ends -->
 <!-- business licenses section starts  -->
 
-<section class="blogs" id="businessLicenses">
+<section class="businessLicenses" id="businessLicenses">
 
     <h1 class="heading"> <span> جواز </span> کسب </h1>
 
@@ -189,8 +189,9 @@
         {
             <div class="box tilt">
                 <img src="@item.ImagePath" alt="@item.Title">
-                <h3> @item.Title </h3>
-                <a href="@item.VerificationLink" class="btn" target="_blank">صحت سنجی</a>
+                <div class="content">
+                    <a href="@item.VerificationLink" class="btn" target="_blank">صحت سنجی</a>
+                </div>
             </div>
         }
 
