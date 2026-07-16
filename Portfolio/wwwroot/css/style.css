@@ -348,7 +348,7 @@ header .navbar a:hover { color: var(--green); }
     position: relative;
     overflow: hidden;
     background: #fff;
-    min-height: 30rem;
+    height: 25rem;
 }
 
 .certificates .box-container .box img {
@@ -519,7 +519,7 @@ header .navbar a:hover { color: var(--green); }
 
     .businessLicenses .box-container .box { max-width: 95%; }
     .businessLicenses .box-container .box img { max-height: 50vh; }
-    .certificates .box-container .box { min-height: 25rem; }
+    .certificates .box-container .box { height: 20rem; }
 }
 
 @media (max-width: 450px) {
