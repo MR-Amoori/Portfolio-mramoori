@@ -201,7 +201,7 @@
 <!-- business licenses section ends -->
 <!-- certificates section starts  -->
 
-<section class="blogs" id="certificates">
+<section class="certificates" id="certificates">
 
     <h1 class="heading"> <span> مدارک </span> من </h1>
 
@@ -211,12 +211,14 @@
         {
             <div class="box tilt">
                 <img src="@item.ImagePath" alt="@item.Title">
-                <h3> @item.Title </h3>
-                @if (!string.IsNullOrEmpty(item.Description))
-                {
-                    <p> @item.Description </p>
-                }
-                <a href="@item.VerificationLink" class="btn" target="_blank">صحت سنجی</a>
+                <div class="content">
+                    <h3> @item.Title </h3>
+                    @if (!string.IsNullOrEmpty(item.Description))
+                    {
+                        <p> @item.Description </p>
+                    }
+                    <a href="@item.VerificationLink" class="btn" target="_blank">صحت سنجی</a>
+                </div>
             </div>
         }
 
