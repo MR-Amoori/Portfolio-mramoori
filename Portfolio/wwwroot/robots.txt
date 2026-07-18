@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /Admin/
+Allow: /
+Sitemap: https://mramoori.ir/sitemap.xml

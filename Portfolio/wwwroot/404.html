@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحه خطای 404</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <!-- Anime.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
+    <!-- IRANSansWeb Font -->
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v28.0.0/dist/font-face.css" rel="stylesheet" type="text/css" />
+    <style>
+        /* تنظیمات کلی برای بدنه */
+        body {
+            background-color: #141019;
+            background: radial-gradient(at 50% -20%, #908392, #0d060e) fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            color: white;
+            font-family: 'IRANSansWeb', sans-serif;
+        }
+
+        h1, p {
+            margin-bottom: 20px;
+            text-align: right; /* متن‌ها راست‌چین شدند */
+            line-height: 1.6;
+        }
+
+        /* طراحی دکمه */
+        .animated-button {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 20px;
+            color: #ffffff;
+            background: linear-gradient(135deg, #6a55ff, #c972ff, #6a55ff);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.4s ease-in-out;
+            position: relative;
+            box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.4);
+        }
+
+        .animated-button:hover {
+            background: linear-gradient(135deg, #c972ff, #6a55ff);
+            box-shadow: 0px 6px 14px rgba(255, 255, 255, 0.6);
+            transform: translateY(-5px);
+        }
+
+        /* حذف خط آبی زیر متن لینک */
+        .animated-button:focus, .animated-button:hover, .animated-button:active {
+            text-decoration: none !important;
+            outline: none !important;
+        }
+
+        /* افکت برای درخشش دکمه */
+        .animated-button::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 150%; /* کاهش اندازه هاله */
+            height: 150%; /* کاهش اندازه هاله */
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.4), transparent); /* کاهش شدت نور */
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(1.2);
+            border-radius: 50%;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .animated-button:hover::after {
+            opacity: 0.5; /* کاهش شفافیت هاله */
+            transform: translate(-50%, -50%) scale(1.3);
+        }
+    </style>
+</head>
+<body dir="rtl"> <!-- تنظیم جهت کلی صفحه به راست‌چین -->
+    <h1>صفحه‌ای که دنبال آن هستید یافت نشد! (404)</h1>
+    <p>متأسفیم! لطفاً به صفحه اصلی بازگردید.</p>
+    <a href="https://mramoori.ir" class="animated-button">
+        بازگشت به صفحه اصلی
+    </a>
+    <script>
+        // اضافه کردن افکت انیمیشن به دکمه
+        anime({
+            targets: '.animated-button',
+            scale: [1, 1.05],
+            direction: 'alternate',
+            easing: 'easeInOutSine',
+            duration: 800,
+            loop: true
+        });
+    </script>
+</body>
+</html>
