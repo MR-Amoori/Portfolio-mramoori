@@ -178,6 +178,9 @@ DocProject/Help/html
 
 # Click-Once directory
 publish/
+[Pp]ublish*/
+**/publish*/
+**/Publish/
 
 # Publish Web Output
 *.[Pp]ublish.xml
@@ -265,6 +268,11 @@ ServiceFabricBackup/
 *.mdf
 *.ldf
 *.ndf
+
+# Sensitive configuration files
+**/appsettings.Production.json
+**/appsettings.Staging.json
+**/appsettings.Development.json
 
 # Business Intelligence projects
 *.rdl.data
