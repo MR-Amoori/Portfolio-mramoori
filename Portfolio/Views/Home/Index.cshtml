@@ -2,12 +2,135 @@
 @using Portfolio.DataLayer.Models
 @model global::Portfolio.DataLayer.ViewModels.IndexViewModel
 @{
-    ViewData["Title"] = "";
+    ViewData["Title"] = "سایت شخصی محمدرضا عموری - برنامه نویس دات نت";
 }
 
 @section MetaTags
 {
     <meta name="description" content="محمدرضا عموری هستم برنامه نویس دات نت. شما در این سایت شخصی می‌تونید روزمه کاری من رو مشاهده بفرمایید."/>
+    <meta name="keywords" content="محمدرضا عموری, برنامه نویس دات نت, سی شارپ, ASP.NET Core, توسعه وب, برنامه نویسی, روزمه کاری, محمد رضا عموری"/>
+
+    <!-- Structured Data for Person -->
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "Person",
+        "name": "@Model.Personal.FirstName @Model.Personal.LastName",
+        "jobTitle": ".NET Developer",
+        "url": "https://mramoori.ir",
+        "image": "https://mramoori.ir/images/Avatar.jpg",
+        "sameAs": [
+            "https://www.instagram.com/@Model.Personal.Instagram",
+            "https://x.com/@Model.Personal.Twitter",
+            "https://github.com/@Model.Personal.Github",
+            "https://www.linkedin.com/in/@Model.Personal.Linkedin",
+            "https://telegram.me/@Model.Personal.Telegram"
+        ],
+        "description": "محمدرضا عموری هستم برنامه نویس دات نت",
+        "knowsAbout": ["C#", "ASP.NET Core", ".NET", "Web Development", "SQL Server"]
+    }
+    </script>
+
+    <!-- Structured Data for Portfolio Items -->
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "ItemList",
+        "itemListElement": [
+            @if (Model.Portfolios != null && Model.Portfolios.Any())
+            {
+                var count = Model.Portfolios.Count();
+                for (int i = 0; i < count; i++)
+                {
+                    var item = Model.Portfolios.ElementAt(i);
+                    <text>
+                {
+                    "@@type": "ListItem",
+                    "position": @(i + 1),
+                    "item": {
+                        "@@type": "CreativeWork",
+                        "name": "@item.Title",
+                        "url": "@item.Link",
+                        "image": "@item.ImagePath",
+                        "description": "پروژه @item.Title"
+                    }
+                }</text>
+                    if (i < count - 1)
+                    {
+                        <text>,</text>
+                    }
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- Structured Data for Blog Posts -->
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "ItemList",
+        "itemListElement": [
+            @if (Model.Blogs != null && Model.Blogs.Any())
+            {
+                var count = Model.Blogs.Count();
+                for (int i = 0; i < count; i++)
+                {
+                    var item = Model.Blogs.ElementAt(i);
+                    <text>
+                {
+                    "@@type": "ListItem",
+                    "position": @(i + 1),
+                    "item": {
+                        "@@type": "BlogPosting",
+                        "headline": "@item.Title",
+                        "url": "@item.Link",
+                        "image": "@item.ImagePath",
+                        "description": "@item.Description",
+                        "datePublished": "@(item.CreateDate != DateTime.MinValue ? item.CreateDate.ToString("yyyy-MM-dd") : DateTime.Now.ToString("yyyy-MM-dd"))"
+                    }
+                }</text>
+                    if (i < count - 1)
+                    {
+                        <text>,</text>
+                    }
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- Structured Data for Services -->
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "ItemList",
+        "itemListElement": [
+            @if (Model.Service != null && Model.Service.Any())
+            {
+                var count = Model.Service.Count();
+                for (int i = 0; i < count; i++)
+                {
+                    var item = Model.Service.ElementAt(i);
+                    <text>
+                {
+                    "@@type": "ListItem",
+                    "position": @(i + 1),
+                    "item": {
+                        "@@type": "Service",
+                        "name": "@item.Name",
+                        "description": "@item.Decription"
+                    }
+                }</text>
+                    if (i < count - 1)
+                    {
+                        <text>,</text>
+                    }
+                }
+            }
+        ]
+    }
+    </script>
 }
 
 @section Styles
@@ -20,17 +143,17 @@
 
 <!-- home section starts  -->
 
-<section class="home" id="home">
+<section class="home" id="home" aria-label="بخش اصلی صفحه">
 
-    <div id="particles-js"></div>
+    <div id="particles-js" aria-hidden="true"></div>
 
     <div class="content">
-        <img class="tilt" src="~/images/Avatar.jpg" alt="من">
-        <h3>
+        <img class="tilt" src="~/images/Avatar.jpg" alt="عکس پروفایل @Model.Personal.FirstName @Model.Personal.LastName">
+        @* <h1>
             @Model.Personal.FirstName <span>@Model.Personal.LastName</span>
-        </h3>
+        </h1> *@
         <p style="direction: ltr"> i'm a <span class="typing-text text-green"> .net developer </span> </p>
-        <a href="#about" class="btn">درباره من</a>
+        <a href="#about-me" class="btn" aria-label="رفتن به بخش درباره من">درباره من</a>
     </div>
 
 </section>
@@ -38,9 +161,9 @@
 <!-- home section ends -->
 <!-- about section starts  -->
 
-<section class="about" id="about">
+<section class="about" id="about-me" aria-label="بخش درباره من">
 
-    <h1 class="heading"> <span>درباره</span> من</h1>
+    <h2 class="heading"> <span>درباره</span> من</h2>
 
     <div class="row">
 
@@ -87,44 +210,44 @@
 
 </section>
 
-<section style="min-height: 0;" class="services" id="services">
+<section style="min-height: 0;" class="services" id="contact-links" aria-label="راه‌های ارتباطی">
 
-    <h1 class="heading">
+    <h2 class="heading">
         <span>راه‌های ارتباطی با</span>
         من
-    </h1>
+    </h2>
 
 
     <div class="box-container">
         <div class="box">
 
 
-            <a href="https://www.instagram.com/@Model.Personal.Instagram">
+            <a href="https://www.instagram.com/@Model.Personal.Instagram" aria-label="اینستاگرام @Model.Personal.Instagram" rel="noopener noreferrer">
                 <img src="~/Icons/instagram.gif" alt="اینستاگرام" width="60px"/>
             </a>
 
             <span>&emsp;&emsp;</span>
 
 
-            <a href="https://x.com/@Model.Personal.Twitter">
+            <a href="https://x.com/@Model.Personal.Twitter" aria-label="توئیتر @Model.Personal.Twitter" rel="noopener noreferrer">
                 <img src="~/Icons/twitter.gif" alt="توئییتر" width="60px"/>
             </a>
 
             <span>&emsp;&emsp;</span>
 
-            <a href="https://github.com/@Model.Personal.Github">
+            <a href="https://github.com/@Model.Personal.Github" aria-label="گیت هاب @Model.Personal.Github" rel="noopener noreferrer">
                 <img src="~/Icons/github.gif" alt="گیت هاب" width="60px"/>
             </a>
 
             <span>&emsp;&emsp;</span>
 
-            <a href="https://www.linkedin.com/in/@Model.Personal.Linkedin">
+            <a href="https://www.linkedin.com/in/@Model.Personal.Linkedin" aria-label="لینکدین @Model.Personal.Linkedin" rel="noopener noreferrer">
                 <img src="~/Icons/linkedin.gif" alt="لینکدین" width="60px"/>
             </a>
 
             <span>&emsp;&emsp;</span>
 
-            <a href="https://telegram.me/@Model.Personal.Telegram">
+            <a href="https://telegram.me/@Model.Personal.Telegram" aria-label="تلگرام @Model.Personal.Telegram" rel="noopener noreferrer">
                 <img src="~/Icons/telegram.gif" alt="تلگرام" width="60px"/>
             </a>
 
@@ -135,12 +258,12 @@
 <!-- about section ends -->
 <!-- services section starts  -->
 
-<section class="services" id="services">
+<section class="services" id="skills" aria-label="مهارت‌ها و خدمات">
 
-    <h1 class="heading">
+    <h2 class="heading">
         <span>مهارت های</span>
         من
-    </h1>
+    </h2>
 
     <div class="box-container">
 
@@ -159,7 +282,7 @@
     </div>
 
 
-    <h1 class="heading"> <span> خدمات </span> من </h1>
+    <h2 class="heading"> <span> خدمات </span> من </h2>
 
     <div class="box-container">
 
@@ -179,18 +302,18 @@
 <!-- services section ends -->
 <!-- business licenses section starts  -->
 
-<section class="businessLicenses" id="businessLicenses">
+<section class="businessLicenses" id="business-licenses" aria-label="جواز کسب">
 
-    <h1 class="heading"> <span> جواز </span> کسب </h1>
+    <h2 class="heading"> <span> جواز </span> کسب </h2>
 
     <div class="box-container">
 
         @foreach (var item in Model.BusinessLicenses)
         {
             <div class="box tilt">
-                <img src="@item.ImagePath" alt="@item.Title">
+                <img src="@item.ImagePath" alt="@item.Title - جواز کسب">
                 <div class="content">
-                    <a href="@item.VerificationLink" class="btn" target="_blank">صحت سنجی</a>
+                    <a href="@item.VerificationLink" class="btn" target="_blank" aria-label="صحت سنجی جواز کسب @item.Title">صحت سنجی</a>
                 </div>
             </div>
         }
@@ -202,23 +325,23 @@
 <!-- business licenses section ends -->
 <!-- certificates section starts  -->
 
-<section class="certificates" id="certificates">
+<section class="certificates" id="certificates" aria-label="مدارک من">
 
-    <h1 class="heading"> <span> مدارک </span> من </h1>
+    <h2 class="heading"> <span> مدارک </span> من </h2>
 
     <div class="box-container">
 
         @foreach (var item in Model.Certificates)
         {
             <div class="box tilt">
-                <img src="@item.ImagePath" alt="@item.Title">
+                <img src="@item.ImagePath" alt="@item.Title - مدرک">
                 <div class="content">
                     <h3> @item.Title </h3>
                     @if (!string.IsNullOrEmpty(item.Description))
                     {
                         <p> @item.Description </p>
                     }
-                    <a href="@item.VerificationLink" class="btn" target="_blank">صحت سنجی</a>
+                    <a href="@item.VerificationLink" class="btn" target="_blank" aria-label="صحت سنجی مدرک @item.Title">صحت سنجی</a>
                 </div>
             </div>
         }
@@ -230,18 +353,18 @@
 <!-- certificates section ends -->
 <!-- Portfolio section starts  -->
 
-<section class="portfolio" id="portfolio">
+<section class="portfolio" id="portfolio" aria-label="نمونه کارها">
 
-    <h1 class="heading"> <span> نمونه </span> کارها </h1>
+    <h2 class="heading"> <span> نمونه </span> کارها </h2>
 
     <div class="box-container">
 
         @foreach (var item in Model.Portfolios)
         {
             <div class="box tilt">
-                <img src="@item.ImagePath" alt="@item.Title">
+                <img src="@item.ImagePath" alt="@item.Title - نمونه کار">
                 <div class="content">
-                    <a href="@item.Link" class="btn">دیدن پروژه</a>
+                    <a href="@item.Link" class="btn" target="_blank" aria-label="مشاهده پروژه @item.Title">دیدن پروژه</a>
                 </div>
             </div>
         }
@@ -253,20 +376,20 @@
 <!-- Portfolio section ends -->
 <!-- blogs section starts  -->
 
-<section class="blogs" id="blogs">
+<section class="blogs" id="blogs" aria-label="وبلاگ من">
 
-    <h1 class="heading"> <span> وبلاگ </span> من </h1>
+    <h2 class="heading"> <span> وبلاگ </span> من </h2>
 
     <div class="box-container">
 
         @foreach (var item in Model.Blogs)
         {
             <div class="box tilt">
-                <img src="@item.ImagePath" alt="@item.Title">
+                <img src="@item.ImagePath" alt="@item.Title - مقاله وبلاگ">
                 <h3> @item.Title </h3>
                 <p> @item.Description </p>
                 @*<p style="direction: ltr">@item.CreateDate.ToString("yyyy/MM/dd")</p>*@
-                <a href="@item.Link" class="btn">خواندن</a>
+                <a href="@item.Link" class="btn" target="_blank" aria-label="خواندن مقاله @item.Title">خواندن</a>
             </div>
         }
 
@@ -278,9 +401,9 @@
 
 <!-- contact section starts  -->
 
-<section class="contact" id="contact">
+<section class="contact" id="contact" aria-label="تماس با من">
 
-    <h1 class="heading"> <span>تماس با </span> من </h1>
+    <h2 class="heading"> <span>تماس با </span> من </h2>
 
     <div class="row">
 

@@ -1,4 +1,7 @@
 User-agent: *
 Disallow: /Admin/
+Disallow: /Account/
+Disallow: /Identity/
 Allow: /
 Sitemap: https://mramoori.ir/sitemap.xml
+Crawl-delay: 1
